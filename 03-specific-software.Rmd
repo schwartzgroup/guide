@@ -1,0 +1,184 @@
+# Special instructions for specific software
+
+Last updated March 27, 2023
+
+Some software require special steps for their installation or use. This chapter aims to document them.
+
+## Gurobi
+
+The Gurobi package has some peculiarities involved in its installation including manually installing binaries and libraries to `/opt/` and having to edit the `PATH` and `LD_LIBRARY_PATH` search paths as a result.
+
+### Use
+
+On the [Gurobi website](https://www.gurobi.com/), first create an account and make use of your product key, which is of the format `XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX`. Once everything is installed, each user will need to register their product key using the following code:
+
+```bash
+grbgetkey XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+```
+
+Note that the per-user registration only works on one machine at a time.
+
+**If the above code works, then nothing else needs to be done.** The following section details how to install Gurbo and enable the above command on machines that do not yet have it.
+
+### Installation
+
+#### Download Gurobi and upload to the server
+
+From the [Gurobi Optimizer download page](https://www.gurobi.com/downloads/gurobi-optimizer-eula/), download the latest Gurobi Optimizer version for `x64_Linux`. For this guide, we will be installing version 9.5.1, so we will be downloading `gurobi9.5.1_linux64.tar.gz`
+
+You can either download from your browser and then upload to one of the servers, or download the link directly to the server:
+
+```bash
+wget https://packages.gurobi.com/9.5/gurobi9.5.1_linux64.tar.gz
+```
+
+#### Decompress to `/opt/`
+
+The `/opt/` directory is where manually-installed static packages should be stored, i.e. those not created with makefiles. See `man hier` for more information.
+
+```
+tar xvf gurobi9.5.1_linux64.tar.gz
+sudo mv gurobi951 /opt/
+```
+
+#### Enable for command-line users
+
+Command-line shells like Bash will read default environment variables from `/etc/environment` before loading the systemwide and user `.profile` and `.bash_profile` scripts. We want to add the newly-installed Gurobi binaries and libraries to `PATH` and `LD_LIBRARY_PATH`, which are `:`-delimited lists of the program and shared library search paths, respectively.
+
+Specifically, we want to add the following:
+
+* To `PATH`: `/opt/gurobi951/linux64/bin` (replace `gurobi951` with whatever version of Gurobi you are installing)
+* To `LD_LIBRARY_PATH`: `/opt/gurobi951/linux64/lib`
+
+`PATH` may already have something there, in which case only append `:/opt/gurobi951/linux64/bin`, as in the following:
+
+```bash
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/gurobi951/linux64/bin"
+```
+
+`LD_LIBRARY_PATH` is likely not there, so we can create a new line:
+
+```bash
+LD_LIBRARY_PATH="/usr/local/lib:/opt/gurobi951/linux64/lib"
+```
+
+We also need to define `GUROBI_HOME` as follows:
+
+```bash
+GUROBI_HOME=/opt/gurobi951/linux64
+```
+
+The final `/etc/environment` file should look something like this:
+
+```bash
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/gurobi951/linux64/bin"
+LD_LIBRARY_PATH="/usr/local/lib:/opt/gurobi951/linux64/lib"
+GUROBI_HOME=/opt/gurobi951/linux64
+```
+
+#### Enable for RStudio Server users
+
+For whatever reason, RStudio Server does not respect `/etc/environment`. Therefore, we need to [modify `LD_LIBRARY_PATH` manually](https://withr.github.io/ld-library-path/). To do this, we just need to add the following line to `/etc/rstudio/rserver.conf`:
+
+```
+rsession-ld-library-path=/opt/gurobi951/linux64/lib/
+```
+
+After that, restart RStudio Server:
+
+```bash
+sudo systemctl restart rstudio-server
+```
+
+Verify that everything is OK:
+
+```bash
+systemctl status rstudio-server
+```
+
+#### Install the R package
+
+Once the above is complete, we can install the R package itself. First, we need to see where R searches for packages using `.libPaths`:
+
+```r
+> .libPaths()
+[1] "/usr/local/lib/R/site-library" "/usr/lib/R/site-library"      
+[3] "/usr/lib/R/library"           
+```
+
+From the above, it seems like `/usr/lib/R/site-library` might be a good choice. Now, we can install Gurobi and its dependency `slam`:
+
+```r
+# Be sure to run as root
+install.packages("slam", repos = "https://cran.r-project.org", lib = "/usr/lib/R/site-library")
+install.packages("/opt/gurobi951/linux64/R/gurobi_9.5-1_R_4.1.1.tar.gz", repos = NULL, lib = "/usr/lib/R/site-library")
+```
+
+Confirm that it works:
+
+```r
+> library(gurobi)
+Loading required package: slam
+Warning message:
+package ‘gurobi’ was built under R version 4.1.1 
+```
+
+## RQPD
+
+`RQPD` cannot be installed from CRAN and needs to be installed manually.
+
+### Clone the RQPD Subversion repository
+
+The RQPD source code is available [on R-Forge](https://rqpd.r-forge.r-project.org/) in a Subversion repository that we can clone:
+
+```bash
+svn checkout svn://scm.r-forge.r-project.org/svnroot/rqpd/
+```
+
+### Install
+
+From here, we can install RQPD. We also need to install all dependencies manually since we are not using CRAN:
+
+```r
+# Be sure to run the following as root
+
+# Install missing dependencies, if any
+lapply(
+	c("stats", "quantreg", "Formula", "Matrix", "MatrixModels", "SparseM"),
+	function(package) {
+		if (!require(package)) {
+			install.packages(
+				package,
+				lib = "/usr/lib/R/library",
+				repos = "https://cran.r-project.org"
+			)
+		}
+	}
+)
+
+# Install RQPD from cloned source
+install.packages(
+	"./rqpd/pkg/",
+	lib = "/usr/lib/R/library", # or what is specified by .libPaths()
+	repos = NULL,
+	type = "source"
+)
+```
+
+Verify that it works:
+
+```r
+> library(rqpd)
+Loading required package: quantreg
+Loading required package: SparseM
+
+Attaching package: ‘SparseM’
+
+The following object is masked from ‘package:base’:
+
+    backsolve
+
+Loading required package: Matrix
+Loading required package: MatrixModels
+Loading required package: Formula
+```

@@ -1,0 +1,17 @@
+--- 
+title: "Joel's lab guide"
+# author:
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+# bibliography: [book.bib, packages.bib]
+# url:
+# cover-image:
+# description:
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# About
+
+This Bookdown serves to collect information that may be useful for your regular interactions with the lab machines. To navigate, use the buttons at the left.
