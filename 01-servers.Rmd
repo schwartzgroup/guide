@@ -33,7 +33,7 @@ Notes:
 - Help debug the causes of crashes and freezes; and
 - Know ahead-of-time what potential problems may cause a machine to crash before it does.
 
-Munin is hosted on the `dagda` machine due to its low utilization compared to the other machines. To access Munin, navigate to [10.174.192.12:8080/munin/](10.174.192.12:8080/munin/ ) in your browser. You will be greeted with the following screen:
+Munin is hosted on the `dagda` machine due to its low utilization compared to the other machines. To access Munin, navigate to [10.174.192.12:8080/munin/](http://10.174.192.12:8080/munin/) in your browser. You will be greeted with the following screen:
 
 ![](images/01-munin-home.png){width=600px}
 
