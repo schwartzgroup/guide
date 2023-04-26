@@ -123,6 +123,55 @@ Warning message:
 package ‘gurobi’ was built under R version 4.1.1 
 ```
 
+## fbkmr
+
+`fbkmr` does not exist on CRAN yet and must be installed manually. Ensure that first `gurobi` is installed (see the section on Gurobi). To decompress the file, run `tar -xvf /path/to/fbkmr_0.1.0.tar.gz` (or whatever the tarball is named).
+
+### Installing dependencies
+
+The `fbkmr` package comes with a file called `NAMESPACE`. By running the following command we can extract a list of all imported packages and print it as an R vector:
+
+```bash
+LIBRARIES=$(
+    grep import fbkmr/NAMESPACE |
+        tr -c "[:alnum:]\n" " " |
+        awk '{print $2}' |
+        sort |
+        uniq |
+        tr "\n" " " |
+        head -c -2
+)
+echo "TO_INSTALL <- c(\"$(sed 's/ /", "/g' <<< "$LIBRARIES")\")"
+```
+
+After pasting this into R, we can then install these libraries using the following code:
+
+```r
+invisible(lapply(
+	TO_INSTALL,
+	function(package) if (!require(package, character.only = TRUE)) install.packages(
+		package,
+		lib = "/usr/local/lib/R/site-library", # may differ based on machine; use `.libPaths()`
+		# lib = "/opt/R/4.1.1/lib/R/library", # for example
+		repos = "https://cran.r-project.org"
+	)
+))
+```
+
+### Installing `fbkmr`
+
+Now, we can install `fbkmr` using the usual code:
+
+```r
+invisible(install.packages(
+	"./fbkmr/",
+	lib = "/usr/local/lib/R/site-library", # or what is specified by .libPaths()
+	# lib = "/opt/R/4.1.1/lib/R/library", # for example
+	repos = NULL,
+	type = "source"
+))
+```
+
 ## RQPD
 
 `RQPD` cannot be installed from CRAN and needs to be installed manually.

@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2023-03-27" />
+<meta name="date" content="2023-04-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -171,10 +171,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1.2.5" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install-the-r-package"><i class="fa fa-check"></i><b>4.1.2.5</b> Install the R package</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#rqpd"><i class="fa fa-check"></i><b>4.2</b> RQPD</a>
+<li class="chapter" data-level="4.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#fbkmr"><i class="fa fa-check"></i><b>4.2</b> fbkmr</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#clone-the-rqpd-subversion-repository"><i class="fa fa-check"></i><b>4.2.1</b> Clone the RQPD Subversion repository</a></li>
-<li class="chapter" data-level="4.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install"><i class="fa fa-check"></i><b>4.2.2</b> Install</a></li>
+<li class="chapter" data-level="4.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-dependencies"><i class="fa fa-check"></i><b>4.2.1</b> Installing dependencies</a></li>
+<li class="chapter" data-level="4.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-fbkmr"><i class="fa fa-check"></i><b>4.2.2</b> Installing <code>fbkmr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#rqpd"><i class="fa fa-check"></i><b>4.3</b> RQPD</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#clone-the-rqpd-subversion-repository"><i class="fa fa-check"></i><b>4.3.1</b> Clone the RQPD Subversion repository</a></li>
+<li class="chapter" data-level="4.3.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install"><i class="fa fa-check"></i><b>4.3.2</b> Install</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="datasets-exposures.html"><a href="datasets-exposures.html"><i class="fa fa-check"></i><b>5</b> Datasets: Exposures</a></li>
@@ -271,54 +276,93 @@ sudo mv gurobi951 /opt/</code></pre>
 </div>
 </div>
 </div>
-<div id="rqpd" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> RQPD<a href="special-instructions-for-specific-software.html#rqpd" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><code>RQPD</code> cannot be installed from CRAN and needs to be installed manually.</p>
-<div id="clone-the-rqpd-subversion-repository" class="section level3 hasAnchor" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> Clone the RQPD Subversion repository<a href="special-instructions-for-specific-software.html#clone-the-rqpd-subversion-repository" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The RQPD source code is available <a href="https://rqpd.r-forge.r-project.org/">on R-Forge</a> in a Subversion repository that we can clone:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="special-instructions-for-specific-software.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svn</span> checkout svn://scm.r-forge.r-project.org/svnroot/rqpd/</span></code></pre></div>
+<div id="fbkmr" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> fbkmr<a href="special-instructions-for-specific-software.html#fbkmr" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>fbkmr</code> does not exist on CRAN yet and must be installed manually. Ensure that first <code>gurobi</code> is installed (see the section on Gurobi). To decompress the file, run <code>tar -xvf /path/to/fbkmr_0.1.0.tar.gz</code> (or whatever the tarball is named).</p>
+<div id="installing-dependencies" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Installing dependencies<a href="special-instructions-for-specific-software.html#installing-dependencies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <code>fbkmr</code> package comes with a file called <code>NAMESPACE</code>. By running the following command we can extract a list of all imported packages and print it as an R vector:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="special-instructions-for-specific-software.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="va">LIBRARIES</span><span class="op">=</span><span class="va">$(</span></span>
+<span id="cb22-2"><a href="special-instructions-for-specific-software.html#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">grep</span> import fbkmr/NAMESPACE <span class="kw">|</span></span>
+<span id="cb22-3"><a href="special-instructions-for-specific-software.html#cb22-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tr</span> <span class="at">-c</span> <span class="st">&quot;[:alnum:]\n&quot;</span> <span class="st">&quot; &quot;</span> <span class="kw">|</span></span>
+<span id="cb22-4"><a href="special-instructions-for-specific-software.html#cb22-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">awk</span> <span class="st">&#39;{print $2}&#39;</span> <span class="kw">|</span></span>
+<span id="cb22-5"><a href="special-instructions-for-specific-software.html#cb22-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">sort</span> <span class="kw">|</span></span>
+<span id="cb22-6"><a href="special-instructions-for-specific-software.html#cb22-6" aria-hidden="true" tabindex="-1"></a>        <span class="fu">uniq</span> <span class="kw">|</span></span>
+<span id="cb22-7"><a href="special-instructions-for-specific-software.html#cb22-7" aria-hidden="true" tabindex="-1"></a>        <span class="fu">tr</span> <span class="st">&quot;\n&quot;</span> <span class="st">&quot; &quot;</span> <span class="kw">|</span></span>
+<span id="cb22-8"><a href="special-instructions-for-specific-software.html#cb22-8" aria-hidden="true" tabindex="-1"></a>        <span class="fu">head</span> <span class="at">-c</span> <span class="at">-2</span></span>
+<span id="cb22-9"><a href="special-instructions-for-specific-software.html#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="va">)</span></span>
+<span id="cb22-10"><a href="special-instructions-for-specific-software.html#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;TO_INSTALL &lt;- c(</span><span class="dt">\&quot;</span><span class="va">$(</span><span class="fu">sed</span> <span class="st">&#39;s/ /&quot;, &quot;/g&#39;</span> <span class="op">&lt;&lt;&lt;</span> <span class="st">&quot;</span><span class="va">$LIBRARIES</span><span class="st">&quot;</span><span class="va">)</span><span class="dt">\&quot;</span><span class="st">)&quot;</span></span></code></pre></div>
+<p>After pasting this into R, we can then install these libraries using the following code:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="special-instructions-for-specific-software.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">lapply</span>(</span>
+<span id="cb23-2"><a href="special-instructions-for-specific-software.html#cb23-2" aria-hidden="true" tabindex="-1"></a>    TO_INSTALL,</span>
+<span id="cb23-3"><a href="special-instructions-for-specific-software.html#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">function</span>(package) <span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(package, <span class="at">character.only =</span> <span class="cn">TRUE</span>)) <span class="fu">install.packages</span>(</span>
+<span id="cb23-4"><a href="special-instructions-for-specific-software.html#cb23-4" aria-hidden="true" tabindex="-1"></a>        package,</span>
+<span id="cb23-5"><a href="special-instructions-for-specific-software.html#cb23-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">lib =</span> <span class="st">&quot;/usr/local/lib/R/site-library&quot;</span>, <span class="co"># may differ based on machine; use `.libPaths()`</span></span>
+<span id="cb23-6"><a href="special-instructions-for-specific-software.html#cb23-6" aria-hidden="true" tabindex="-1"></a>        <span class="co"># lib = &quot;/opt/R/4.1.1/lib/R/library&quot;, # for example</span></span>
+<span id="cb23-7"><a href="special-instructions-for-specific-software.html#cb23-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">repos =</span> <span class="st">&quot;https://cran.r-project.org&quot;</span></span>
+<span id="cb23-8"><a href="special-instructions-for-specific-software.html#cb23-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb23-9"><a href="special-instructions-for-specific-software.html#cb23-9" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
 </div>
-<div id="install" class="section level3 hasAnchor" number="4.2.2">
-<h3><span class="header-section-number">4.2.2</span> Install<a href="special-instructions-for-specific-software.html#install" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="installing-fbkmr" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Installing <code>fbkmr</code><a href="special-instructions-for-specific-software.html#installing-fbkmr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now, we can install <code>fbkmr</code> using the usual code:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="special-instructions-for-specific-software.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">install.packages</span>(</span>
+<span id="cb24-2"><a href="special-instructions-for-specific-software.html#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;./fbkmr/&quot;</span>,</span>
+<span id="cb24-3"><a href="special-instructions-for-specific-software.html#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">lib =</span> <span class="st">&quot;/usr/local/lib/R/site-library&quot;</span>, <span class="co"># or what is specified by .libPaths()</span></span>
+<span id="cb24-4"><a href="special-instructions-for-specific-software.html#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># lib = &quot;/opt/R/4.1.1/lib/R/library&quot;, # for example</span></span>
+<span id="cb24-5"><a href="special-instructions-for-specific-software.html#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">repos =</span> <span class="cn">NULL</span>,</span>
+<span id="cb24-6"><a href="special-instructions-for-specific-software.html#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">&quot;source&quot;</span></span>
+<span id="cb24-7"><a href="special-instructions-for-specific-software.html#cb24-7" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div>
+</div>
+</div>
+<div id="rqpd" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> RQPD<a href="special-instructions-for-specific-software.html#rqpd" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>RQPD</code> cannot be installed from CRAN and needs to be installed manually.</p>
+<div id="clone-the-rqpd-subversion-repository" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Clone the RQPD Subversion repository<a href="special-instructions-for-specific-software.html#clone-the-rqpd-subversion-repository" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The RQPD source code is available <a href="https://rqpd.r-forge.r-project.org/">on R-Forge</a> in a Subversion repository that we can clone:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="special-instructions-for-specific-software.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">svn</span> checkout svn://scm.r-forge.r-project.org/svnroot/rqpd/</span></code></pre></div>
+</div>
+<div id="install" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Install<a href="special-instructions-for-specific-software.html#install" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>From here, we can install RQPD. We also need to install all dependencies manually since we are not using CRAN:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="special-instructions-for-specific-software.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Be sure to run the following as root</span></span>
-<span id="cb23-2"><a href="special-instructions-for-specific-software.html#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="special-instructions-for-specific-software.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Install missing dependencies, if any</span></span>
-<span id="cb23-4"><a href="special-instructions-for-specific-software.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(</span>
-<span id="cb23-5"><a href="special-instructions-for-specific-software.html#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">&quot;stats&quot;</span>, <span class="st">&quot;quantreg&quot;</span>, <span class="st">&quot;Formula&quot;</span>, <span class="st">&quot;Matrix&quot;</span>, <span class="st">&quot;MatrixModels&quot;</span>, <span class="st">&quot;SparseM&quot;</span>),</span>
-<span id="cb23-6"><a href="special-instructions-for-specific-software.html#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">function</span>(package) {</span>
-<span id="cb23-7"><a href="special-instructions-for-specific-software.html#cb23-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(package)) {</span>
-<span id="cb23-8"><a href="special-instructions-for-specific-software.html#cb23-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">install.packages</span>(</span>
-<span id="cb23-9"><a href="special-instructions-for-specific-software.html#cb23-9" aria-hidden="true" tabindex="-1"></a>                package,</span>
-<span id="cb23-10"><a href="special-instructions-for-specific-software.html#cb23-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">lib =</span> <span class="st">&quot;/usr/lib/R/library&quot;</span>,</span>
-<span id="cb23-11"><a href="special-instructions-for-specific-software.html#cb23-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">repos =</span> <span class="st">&quot;https://cran.r-project.org&quot;</span></span>
-<span id="cb23-12"><a href="special-instructions-for-specific-software.html#cb23-12" aria-hidden="true" tabindex="-1"></a>            )</span>
-<span id="cb23-13"><a href="special-instructions-for-specific-software.html#cb23-13" aria-hidden="true" tabindex="-1"></a>        }</span>
-<span id="cb23-14"><a href="special-instructions-for-specific-software.html#cb23-14" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb23-15"><a href="special-instructions-for-specific-software.html#cb23-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb23-16"><a href="special-instructions-for-specific-software.html#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-17"><a href="special-instructions-for-specific-software.html#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Install RQPD from cloned source</span></span>
-<span id="cb23-18"><a href="special-instructions-for-specific-software.html#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(</span>
-<span id="cb23-19"><a href="special-instructions-for-specific-software.html#cb23-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;./rqpd/pkg/&quot;</span>,</span>
-<span id="cb23-20"><a href="special-instructions-for-specific-software.html#cb23-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">lib =</span> <span class="st">&quot;/usr/lib/R/library&quot;</span>, <span class="co"># or what is specified by .libPaths()</span></span>
-<span id="cb23-21"><a href="special-instructions-for-specific-software.html#cb23-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">repos =</span> <span class="cn">NULL</span>,</span>
-<span id="cb23-22"><a href="special-instructions-for-specific-software.html#cb23-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">&quot;source&quot;</span></span>
-<span id="cb23-23"><a href="special-instructions-for-specific-software.html#cb23-23" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="special-instructions-for-specific-software.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Be sure to run the following as root</span></span>
+<span id="cb26-2"><a href="special-instructions-for-specific-software.html#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="special-instructions-for-specific-software.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Install missing dependencies, if any</span></span>
+<span id="cb26-4"><a href="special-instructions-for-specific-software.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(</span>
+<span id="cb26-5"><a href="special-instructions-for-specific-software.html#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">&quot;stats&quot;</span>, <span class="st">&quot;quantreg&quot;</span>, <span class="st">&quot;Formula&quot;</span>, <span class="st">&quot;Matrix&quot;</span>, <span class="st">&quot;MatrixModels&quot;</span>, <span class="st">&quot;SparseM&quot;</span>),</span>
+<span id="cb26-6"><a href="special-instructions-for-specific-software.html#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">function</span>(package) {</span>
+<span id="cb26-7"><a href="special-instructions-for-specific-software.html#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(package)) {</span>
+<span id="cb26-8"><a href="special-instructions-for-specific-software.html#cb26-8" aria-hidden="true" tabindex="-1"></a>            <span class="fu">install.packages</span>(</span>
+<span id="cb26-9"><a href="special-instructions-for-specific-software.html#cb26-9" aria-hidden="true" tabindex="-1"></a>                package,</span>
+<span id="cb26-10"><a href="special-instructions-for-specific-software.html#cb26-10" aria-hidden="true" tabindex="-1"></a>                <span class="at">lib =</span> <span class="st">&quot;/usr/lib/R/library&quot;</span>,</span>
+<span id="cb26-11"><a href="special-instructions-for-specific-software.html#cb26-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">repos =</span> <span class="st">&quot;https://cran.r-project.org&quot;</span></span>
+<span id="cb26-12"><a href="special-instructions-for-specific-software.html#cb26-12" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb26-13"><a href="special-instructions-for-specific-software.html#cb26-13" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb26-14"><a href="special-instructions-for-specific-software.html#cb26-14" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb26-15"><a href="special-instructions-for-specific-software.html#cb26-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-16"><a href="special-instructions-for-specific-software.html#cb26-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-17"><a href="special-instructions-for-specific-software.html#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Install RQPD from cloned source</span></span>
+<span id="cb26-18"><a href="special-instructions-for-specific-software.html#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(</span>
+<span id="cb26-19"><a href="special-instructions-for-specific-software.html#cb26-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;./rqpd/pkg/&quot;</span>,</span>
+<span id="cb26-20"><a href="special-instructions-for-specific-software.html#cb26-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">lib =</span> <span class="st">&quot;/usr/lib/R/library&quot;</span>, <span class="co"># or what is specified by .libPaths()</span></span>
+<span id="cb26-21"><a href="special-instructions-for-specific-software.html#cb26-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">repos =</span> <span class="cn">NULL</span>,</span>
+<span id="cb26-22"><a href="special-instructions-for-specific-software.html#cb26-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">type =</span> <span class="st">&quot;source&quot;</span></span>
+<span id="cb26-23"><a href="special-instructions-for-specific-software.html#cb26-23" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 <p>Verify that it works:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="special-instructions-for-specific-software.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(rqpd)</span>
-<span id="cb24-2"><a href="special-instructions-for-specific-software.html#cb24-2" aria-hidden="true" tabindex="-1"></a>Loading required package<span class="sc">:</span> quantreg</span>
-<span id="cb24-3"><a href="special-instructions-for-specific-software.html#cb24-3" aria-hidden="true" tabindex="-1"></a>Loading required package<span class="sc">:</span> SparseM</span>
-<span id="cb24-4"><a href="special-instructions-for-specific-software.html#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-5"><a href="special-instructions-for-specific-software.html#cb24-5" aria-hidden="true" tabindex="-1"></a>Attaching package<span class="sc">:</span> ‘SparseM’</span>
-<span id="cb24-6"><a href="special-instructions-for-specific-software.html#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="special-instructions-for-specific-software.html#cb24-7" aria-hidden="true" tabindex="-1"></a>The following object is masked from ‘package<span class="sc">:</span>base’<span class="sc">:</span></span>
-<span id="cb24-8"><a href="special-instructions-for-specific-software.html#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-9"><a href="special-instructions-for-specific-software.html#cb24-9" aria-hidden="true" tabindex="-1"></a>    backsolve</span>
-<span id="cb24-10"><a href="special-instructions-for-specific-software.html#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-11"><a href="special-instructions-for-specific-software.html#cb24-11" aria-hidden="true" tabindex="-1"></a>Loading required package<span class="sc">:</span> Matrix</span>
-<span id="cb24-12"><a href="special-instructions-for-specific-software.html#cb24-12" aria-hidden="true" tabindex="-1"></a>Loading required package<span class="sc">:</span> MatrixModels</span>
-<span id="cb24-13"><a href="special-instructions-for-specific-software.html#cb24-13" aria-hidden="true" tabindex="-1"></a>Loading required package<span class="sc">:</span> Formula</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="special-instructions-for-specific-software.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&gt;</span> <span class="fu">library</span>(rqpd)</span>
+<span id="cb27-2"><a href="special-instructions-for-specific-software.html#cb27-2" aria-hidden="true" tabindex="-1"></a>Loading required package<span class="sc">:</span> quantreg</span>
+<span id="cb27-3"><a href="special-instructions-for-specific-software.html#cb27-3" aria-hidden="true" tabindex="-1"></a>Loading required package<span class="sc">:</span> SparseM</span>
+<span id="cb27-4"><a href="special-instructions-for-specific-software.html#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="special-instructions-for-specific-software.html#cb27-5" aria-hidden="true" tabindex="-1"></a>Attaching package<span class="sc">:</span> ‘SparseM’</span>
+<span id="cb27-6"><a href="special-instructions-for-specific-software.html#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="special-instructions-for-specific-software.html#cb27-7" aria-hidden="true" tabindex="-1"></a>The following object is masked from ‘package<span class="sc">:</span>base’<span class="sc">:</span></span>
+<span id="cb27-8"><a href="special-instructions-for-specific-software.html#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="special-instructions-for-specific-software.html#cb27-9" aria-hidden="true" tabindex="-1"></a>    backsolve</span>
+<span id="cb27-10"><a href="special-instructions-for-specific-software.html#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="special-instructions-for-specific-software.html#cb27-11" aria-hidden="true" tabindex="-1"></a>Loading required package<span class="sc">:</span> Matrix</span>
+<span id="cb27-12"><a href="special-instructions-for-specific-software.html#cb27-12" aria-hidden="true" tabindex="-1"></a>Loading required package<span class="sc">:</span> MatrixModels</span>
+<span id="cb27-13"><a href="special-instructions-for-specific-software.html#cb27-13" aria-hidden="true" tabindex="-1"></a>Loading required package<span class="sc">:</span> Formula</span></code></pre></div>
 
 </div>
 </div>

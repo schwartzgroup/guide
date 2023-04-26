@@ -23,6 +23,9 @@ decompress-to-opt
 enable-for-command-line-users
 enable-for-rstudio-server-users
 install-the-r-package
+fbkmr
+installing-dependencies
+installing-fbkmr
 rqpd
 clone-the-rqpd-subversion-repository
 install
