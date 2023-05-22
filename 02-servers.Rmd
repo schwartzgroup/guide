@@ -2,7 +2,7 @@
 
 This section lists information about the various servers and how to assess their status + suitability for work.
 
-## Server attributes
+## Server attributes {#server-info}
 
 The following table lists attributes of the servers as of March 23, 2023.
 
@@ -43,6 +43,18 @@ On the right-hand side is the page content. Normally, various graphs will appear
 
 The following sections will dive into specific Munin dashboards.
 
+### Load average
+
+The **load average** refers to the current average utilization of processing power. A load of 0% means that the machine is idle, while a load of 100% means that the machine is fully being used.
+
+**The load average can go above 100%** - this means that processes are requesting more power than the machine can provide and the kernel is trying to distribute work fairly among processes. This means that, as a simplified example, if there are two programs competing for all of the available threads, then the kernel may decide to pause one program, work on the other, pause that, return to the first program, and repeat until more resources become available.
+
+An example of a load average graph is shown below - notice how it briefly peaks above 100%:
+
+![](images/01-load-day.png)
+
+To see the current load averages across all of the servers, see <http://10.174.192.12:8080/munin/system-day.html#Load%20average> or click the `Load (d)` link on Munin.
+
 ### Memory utilization
 
 Memory utilization is a very complicated topic, in part because the kernel does so much work behind the scenes so that programs don't have to worry about  the finer details of memory management. This subsection will focus specifically on two main aspects of memory use:
@@ -59,17 +71,9 @@ An example of a memory utilization graph is shown below - notice how there are s
 
 ![](images/01-memory-day.png)
 
-### Load average
+To see the current memory utilization across all of the servers, see <http://10.174.192.12:8080/munin/system-day.html#Memory%20usage> or click the `Memory (d)` link on Munin.
 
-The **load average** refers to the current average utilization of processing power. A load of 0% means that the machine is idle, while a load of 100% means that the machine is fully being used.
-
-**The load average can go above 100%** - this means that processes are requesting more power than the machine can provide and the kernel is trying to distribute work fairly among processes. This means that, as a simplified example, if there are two programs competing for all of the available threads, then the kernel may decide to pause one program, work on the other, pause that, return to the first program, and repeat until more resources become available.
-
-An example of a load average graph is shown below - notice how it briefly peaks above 100%:
-
-![](images/01-load-day.png)
-
-## How to pick a server to work on
+## How to pick a server to work on {#picking-a-server}
 
 1. **Is it capable?** Refer to the [server attributes](#server-attributes) table and ensure that the server has enough processing speed and memory.
 

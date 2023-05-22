@@ -1,0 +1,64 @@
+# Getting started
+
+This section will help you get started using the lab servers.
+
+## Connecting to the VPN
+
+If you're not currently in the 401 Park / Landmark building, you'll have to first connect to the Harvard VPN using your HarvardKey credentials to access the lab servers. If you don't have the VPN client already, you can download it at <https://vpn.harvard.edu>. AnyConnect functionality comes pre-installed in Linux systems (OpenConnect -> Cisco AnyConnect in the NetworkManager VPN manager).
+
+The VPN address is `vpn.harvard.edu` and the tunnel is `#HSPH` (add this to the end of your HarvardKey login, e.g. `your_harvardkey_name@g.harvard.edu#HSPH`). You wil be prompted to enter two passwords: first password will be your HarvardKey password and the second password will be `push`, which will activate a Duo push on your phone.
+
+Some notes on the VPN:
+
+- If you only have a FASRC VPN account, you'll need to get a separate, generic Harvard VPN account. FASRC VPN accounts seem to be unable to access the lab servers.
+- If you're still having trouble, try to email IT and ask to be added to the HSPH tunnel as your account might not yet have access.
+
+## Topology of the lab servers
+
+The lab's servers consist primarily of two categories of servers:
+
+1. Work servers, which have high CPU and memory capacity, and
+2. Storage servers, which have high disk capacity but low CPU and memory capacity.
+
+Each of the storage servers is accessible from the `/media/` directory of each work server. For example, the `qnap4` storage server is available by accessing `/media/qnap4/` on any of the work servers, `gate` is available at `/media/gate`, etc.
+
+The structure of `/media/` is set up such that it is identical on each of the work servers, so code that references e.g. `/media/qnap4/some-file.txt` will be able to run without modification on any of the work servers.
+
+For detailed information about what servers are available and what resources each possesses, see [the section on server attributes](#server-info).
+
+## Best practices
+
+In general, you will want to do your work (i.e. running R code) on one of the work servers and save data to / load data from one or more of the storage servers. The connections of the servers are fast enough that speed shouldn't be an issue.
+
+The work servers have limited local space, and this space should generally be reserved for R libraries, RStudio temporary files, etc. which are necessary for the RStudio Server to function. It's OK to keep a few small files in your `/home/` directory (which is unique to each of the work servers), but don't go too crazy!
+
+For guidance on which server to pick for your work, see [the section on how to pick a server to work on](#picking-a-server).
+
+## Connecting to RStudio
+
+RStudio is available on port `8787` of any of the work. You can access RStudio directly by clicking on one of the links below (helpful to bookmark!):
+
+- tiamat: <http://10.174.192.10:8787/>
+- mithra: <http://10.174.192.11:8787/>
+- dagda: <http://10.174.192.12:8787/>
+- shiva: <http://10.174.192.14:8787/>
+
+## Connecting to the command line of a server
+
+In some cases, you may need to connect directly to the server command lines rather than the RStudio Servers, e.g. to kill jobs, install software, move around a lot of files, etc. RStudio Server has a Terminal tab next to the Console tab that you can use, but it may be more convenient to connect directly via SSH ("Secure Shell", the protocol for connecting to Linux and Unix servers).
+
+To connect via SSH on macOS or Linux, open the terminal application and type `ssh your_username@server_ip`, e.g. `ssh jharvard@10.174.192.10`.
+
+To connect via SSH on Windows, you can either:
+
+- [Install PuTTY](https://www.putty.org/), [MobaXTerm](https://mobaxterm.mobatek.net/), or some other terminal client and then enter the server IP address into the main dialog, or
+- [Install Linux](https://learn.microsoft.com/en-us/windows/wsl/install) and then type `ssh your_username@server_ip` from the Linux terminal
+
+## Troubleshooting the RStudio Server login
+
+Several issues can arise when using the RStudio Server related to saturating the CPU, memory, or I/O. If you're having issues logging in (but the RStudio login page shows up), you can try to log in to the command line and try the following (listed in order of likeliness), or you can post to the lab Google Group:
+
+- Running jobs: Use `htop` and press F4 to filter by `rsession -u [your username]` to see if you have a job open. If you see any jobs using up 100% CPU then likely they're holding up the login process and the server is waiting for whatever you were running the last time you logged on to finish. If this is the case, you can either wait or press F9 to open the kill job menu and send signal 9 (SIGKILL) to terminate immediately.
+- Full memory: Use `htop` to see if the Mem bar is full. If it is, then your session is likely swapping which means it's processing data on-disk instead of in-memory. This is extremely slow. If all servers look like this and the CPUs look idle despite the memory usage, feel free to email me and I can reach out to the people logged in to the RStudio Server and see if they're still running anything. Sometimes people forget about their jobs (no problem with that, of course!) and I can kill them to free up some memory.
+- Large session cache: Use `du -sh ~/.local/share/rstudio/sessions/` to see the size of your saved sessions. Every time you log in, RStudio Server restores your last session using these files. If it's bigger than say 10GB and you don't want to wait you can use `rm -rf ~/.local/share/rstudio/sessions/` to remove them.
+- Unmounted drives: Use `mount -a` and look for qnap, qnap2, qnap3, qnap4, gate (whichever you are using) and make sure the drive is there. If it's not, then one of the network drives disconnected. Your process likely got zombified and the server needs to be restarted.

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Server information | Joel’s lab guide</title>
-  <meta name="description" content="3 Server information | Joel’s lab guide" />
+  <title>2 Getting started | Joel’s lab guide</title>
+  <meta name="description" content="2 Getting started | Joel’s lab guide" />
   <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Server information | Joel’s lab guide" />
+  <meta property="og:title" content="2 Getting started | Joel’s lab guide" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Server information | Joel’s lab guide" />
+  <meta name="twitter:title" content="2 Getting started | Joel’s lab guide" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="getting-started.html"/>
-<link rel="next" href="transferring-files.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="server-information.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -215,202 +215,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="server-information" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">3</span> Server information<a href="server-information.html#server-information" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This section lists information about the various servers and how to assess their status + suitability for work.</p>
-<div id="server-info" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Server attributes<a href="server-information.html#server-info" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The following table lists attributes of the servers as of March 23, 2023.</p>
-<table>
-<colgroup>
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-<col width="12%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">type</th>
-<th align="center">name</th>
-<th align="center">ip</th>
-<th align="center">cores</th>
-<th align="center">threads</th>
-<th align="center">max clock</th>
-<th align="center">memory</th>
-<th align="center">capacity</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">Work</td>
-<td align="center">tiamat</td>
-<td align="center">10.174.192.10</td>
-<td align="center">24</td>
-<td align="center">48</td>
-<td align="center">3.2 GHz</td>
-<td align="center">512 GB</td>
-<td align="center">1.8 TB</td>
-</tr>
-<tr class="even">
-<td align="center">Work</td>
-<td align="center">mithra</td>
-<td align="center">10.174.192.11</td>
-<td align="center">20</td>
-<td align="center">40</td>
-<td align="center">4.5 GHz</td>
-<td align="center">384 GB</td>
-<td align="center">1.9 TB</td>
-</tr>
-<tr class="odd">
-<td align="center">Work</td>
-<td align="center">dagda</td>
-<td align="center">10.174.192.12</td>
-<td align="center">16</td>
-<td align="center">16</td>
-<td align="center">2.8 GHz</td>
-<td align="center">128 GB</td>
-<td align="center">220 GB</td>
-</tr>
-<tr class="even">
-<td align="center">Work</td>
-<td align="center">shiva</td>
-<td align="center">10.174.192.14</td>
-<td align="center">24</td>
-<td align="center">48</td>
-<td align="center">3.2 GHz</td>
-<td align="center">512 GB</td>
-<td align="center">1.8 TB</td>
-</tr>
-<tr class="odd">
-<td align="center">Storage</td>
-<td align="center">gate</td>
-<td align="center">10.174.192.20</td>
-<td align="center">unk.</td>
-<td align="center">unk.</td>
-<td align="center">unk.</td>
-<td align="center">unk.</td>
-<td align="center">32 TB</td>
-</tr>
-<tr class="even">
-<td align="center">Storage</td>
-<td align="center">qnap</td>
-<td align="center">10.174.192.21</td>
-<td align="center">4</td>
-<td align="center">4</td>
-<td align="center">2.4 MHz</td>
-<td align="center">2 GB</td>
-<td align="center">29 TB</td>
-</tr>
-<tr class="odd">
-<td align="center">Storage</td>
-<td align="center">qnap2</td>
-<td align="center">10.174.192.22</td>
-<td align="center">unk.</td>
-<td align="center">unk.</td>
-<td align="center">unk.</td>
-<td align="center">unk.</td>
-<td align="center">44 TB</td>
-</tr>
-<tr class="even">
-<td align="center">Storage</td>
-<td align="center">qnap3</td>
-<td align="center">10.174.192.23</td>
-<td align="center">4</td>
-<td align="center">4</td>
-<td align="center">1.7 GHz</td>
-<td align="center">2 GB</td>
-<td align="center">87 TB</td>
-</tr>
-<tr class="odd">
-<td align="center">Storage</td>
-<td align="center">qnap4</td>
-<td align="center">10.174.192.24</td>
-<td align="center">4</td>
-<td align="center">4</td>
-<td align="center">1.7 GHz</td>
-<td align="center">4 GB</td>
-<td align="center">2.7 TB</td>
-</tr>
-</tbody>
-</table>
-<p>Notes:</p>
+<div id="getting-started" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Getting started<a href="getting-started.html#getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This section will help you get started using the lab servers.</p>
+<div id="connecting-to-the-vpn" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Connecting to the VPN<a href="getting-started.html#connecting-to-the-vpn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you’re not currently in the 401 Park / Landmark building, you’ll have to first connect to the Harvard VPN using your HarvardKey credentials to access the lab servers. If you don’t have the VPN client already, you can download it at <a href="https://vpn.harvard.edu" class="uri">https://vpn.harvard.edu</a>. AnyConnect functionality comes pre-installed in Linux systems (OpenConnect -&gt; Cisco AnyConnect in the NetworkManager VPN manager).</p>
+<p>The VPN address is <code>vpn.harvard.edu</code> and the tunnel is <code>#HSPH</code> (add this to the end of your HarvardKey login, e.g. <code>your_harvardkey_name@g.harvard.edu#HSPH</code>). You wil be prompted to enter two passwords: first password will be your HarvardKey password and the second password will be <code>push</code>, which will activate a Duo push on your phone.</p>
+<p>Some notes on the VPN:</p>
 <ul>
-<li><code>capacity</code> for computational machines refers to that of the home directory; for storage machines, it refers to the total size of the hard drive pool.</li>
-<li>To assess CPUs: <code>sudo dmidecode -t processor</code></li>
-<li>To assess memory: <code>sudo dmidecode -t memory</code></li>
-<li>To assess disk: <code>df -h</code></li>
+<li>If you only have a FASRC VPN account, you’ll need to get a separate, generic Harvard VPN account. FASRC VPN accounts seem to be unable to access the lab servers.</li>
+<li>If you’re still having trouble, try to email IT and ask to be added to the HSPH tunnel as your account might not yet have access.</li>
 </ul>
 </div>
-<div id="server-resource-monitor" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Server resource monitor<a href="server-information.html#server-resource-monitor" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><a href="http://munin-monitoring.org/">Munin</a> is available on the servers for resource monitoring purposes. This can be used, for example, to:</p>
-<ul>
-<li>Determine what machines are available for running jobs;</li>
-<li>Help debug the causes of crashes and freezes; and</li>
-<li>Know ahead-of-time what potential problems may cause a machine to crash before it does.</li>
-</ul>
-<p>Munin is hosted on the <code>dagda</code> machine due to its low utilization compared to the other machines. To access Munin, navigate to <a href="http://10.174.192.12:8080/munin/">10.174.192.12:8080/munin/</a> in your browser. You will be greeted with the following screen:</p>
-<p><img src="images/01-munin-home.png" width="600" /></p>
-<p>On the left-hand side of the main page is the navigation pane. From here, you can navigate to dashboards that summarize various properties of the machines. At the top left are some <strong>quick links</strong> to the most useful dashboards. Underneath that, another section of interest is the <strong>problems</strong> section, which will list any notices regarding the health of the machines.</p>
-<p>On the right-hand side is the page content. Normally, various graphs will appear here. On the main page, there are instead some links to machine-specific dashboards, with any problems highlighted in red or yellow.</p>
-<p>The following sections will dive into specific Munin dashboards.</p>
-<div id="load-average" class="section level3 hasAnchor" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Load average<a href="server-information.html#load-average" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The <strong>load average</strong> refers to the current average utilization of processing power. A load of 0% means that the machine is idle, while a load of 100% means that the machine is fully being used.</p>
-<p><strong>The load average can go above 100%</strong> - this means that processes are requesting more power than the machine can provide and the kernel is trying to distribute work fairly among processes. This means that, as a simplified example, if there are two programs competing for all of the available threads, then the kernel may decide to pause one program, work on the other, pause that, return to the first program, and repeat until more resources become available.</p>
-<p>An example of a load average graph is shown below - notice how it briefly peaks above 100%:</p>
-<p><img src="images/01-load-day.png" /></p>
-<p>To see the current load averages across all of the servers, see <a href="http://10.174.192.12:8080/munin/system-day.html#Load%20average" class="uri">http://10.174.192.12:8080/munin/system-day.html#Load%20average</a> or click the <code>Load (d)</code> link on Munin.</p>
-</div>
-<div id="memory-utilization" class="section level3 hasAnchor" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Memory utilization<a href="server-information.html#memory-utilization" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Memory utilization is a very complicated topic, in part because the kernel does so much work behind the scenes so that programs don’t have to worry about the finer details of memory management. This subsection will focus specifically on two main aspects of memory use:</p>
-<ul>
-<li><p><code>unused</code>: Memory marked as <code>unused</code> exists in RAM and is freely available for programs to use. In an ideal situation, there will be enough unused memory for your programs, and under normal operation there will usually be some unused memory.</p></li>
-<li><p><code>swap</code>: Memory marked as <code>swap</code> exists in your <em>swap space</em>, which is a portion of the <em>disk</em> that is set aside to accommodate extra memory. Swap memory is <strong>extremely slow</strong> in comparison to unused memory - typical RAM can max out at 12 GB/s for DDR3 memory and over 32 GB/s for DDR4 memory, while a typical hard drive maxes out at around 160 MB/s. For computers with SSDs, the difference is not as egregious but still substantial.</p></li>
-</ul>
-<p>Swap memory should only be used as a last resort, and, indeed, the kernel considers it as such. When there is no unused memory, the kernel will start transferring memory from your RAM to your swap space in a process known as <strong>swapping</strong>. The effect of this is that programs using that memory will be extremely slowed down, because the swapped memory must first be transferred <em>back</em> to the RAM before it can be used.</p>
-<p><strong>If a machine starts swapping, keep an eye on it!</strong> A little swap can be OK, but once all of the swap space is used, the machine has run out of memory and the kernel will start terminating programs. The process that does this is called the <a href="https://www.kernel.org/doc/gorman/html/understand/understand016.html">out-of-memory (OOM) killer</a>, which calculates the <em>badness</em> for each process by weighing the amount of memory it uses vs. how long it has been running. The exact algorithm for determining <em>badness</em> can be found on the linked page. <strong>In most cases, <em>your program will have the most badness</em> and will be killed by the OOM killer</strong> vs. other system processes that have been running for a long time (and therefore have less <em>badness</em>), so it’s important to pay attention!</p>
-<p>An example of a memory utilization graph is shown below - notice how there are some brief periods where the computer starts swapping (at one point it even gets so bad that the monitoring software can’t keep up and a gap shows up in the graph!):</p>
-<p><img src="images/01-memory-day.png" /></p>
-<p>To see the current memory utilization across all of the servers, see <a href="http://10.174.192.12:8080/munin/system-day.html#Memory%20usage" class="uri">http://10.174.192.12:8080/munin/system-day.html#Memory%20usage</a> or click the <code>Memory (d)</code> link on Munin.</p>
-</div>
-</div>
-<div id="picking-a-server" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> How to pick a server to work on<a href="server-information.html#picking-a-server" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="topology-of-the-lab-servers" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Topology of the lab servers<a href="getting-started.html#topology-of-the-lab-servers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The lab’s servers consist primarily of two categories of servers:</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Is it capable?</strong> Refer to the <a href="#server-attributes">server attributes</a> table and ensure that the server has enough processing speed and memory.</p>
-<ul>
-<li>Not sure how much memory your code might use? Do a short test run and monitor the resource usage closely (see <a href="server-information.html#more-precise-monitoring">the next section</a>) - if it ends up using more memory than you expect then you can kill it before it freezes up the server and gets killed on its own.</li>
-<li>For running <strong>simple models</strong>: <code>max clock</code> is the most important attribute. This is because functions like <code>glm()</code>, <code>survival::clogit()</code>, <code>nlme::lme()</code>, etc. only run on a single core.</li>
-<li>For running <strong>parallel jobs</strong>: multiply <code>max clock</code> by the number of <code>threads</code>. Each thread will be executing code simultaneously.
-<ul>
-<li><strong>Caution</strong>: in general most parallel jobs will create a full copy of your data set before running so that each subprocess has something to work with. Be sure to carefully monitor your memory usage if running parallel jobs with a large data set, or running a large number of parallel jobs on a small data set!</li>
-</ul></li>
-</ul></li>
-<li><p><strong>Is there room?</strong> Refer to the <a href="server-information.html#server-resource-monitor">server resource monitor</a> section and ensure that the actual amount of processing power and memory available is enough for your job.</p></li>
-<li><p><strong>Monitor your job.</strong> Be sure to revisit #2 occasionally as your jobs are running!</p>
-<ul>
-<li>Other people may have started jobs on the same server and it may be faster to switch to a different one.</li>
-<li>The amount of memory available and what your job requires may be different from what you originally thought. <strong>If the machine starts swapping, be on the lookout!</strong> Swap memory is extremely slow and should be used sparingly. Additionally, once the swap is fully used, the kernel will start terminating programs.</li>
-</ul></li>
+<li>Work servers, which have high CPU and memory capacity, and</li>
+<li>Storage servers, which have high disk capacity but low CPU and memory capacity.</li>
 </ol>
+<p>Each of the storage servers is accessible from the <code>/media/</code> directory of each work server. For example, the <code>qnap4</code> storage server is available by accessing <code>/media/qnap4/</code> on any of the work servers, <code>gate</code> is available at <code>/media/gate</code>, etc.</p>
+<p>The structure of <code>/media/</code> is set up such that it is identical on each of the work servers, so code that references e.g. <code>/media/qnap4/some-file.txt</code> will be able to run without modification on any of the work servers.</p>
+<p>For detailed information about what servers are available and what resources each possesses, see <a href="server-information.html#server-info">the section on server attributes</a>.</p>
 </div>
-<div id="more-precise-monitoring" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> More precise monitoring<a href="server-information.html#more-precise-monitoring" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>While the server resource monitor is useful for getting a quick overview of the state of all of the work servers, there are some key limitations:</p>
-<ol style="list-style-type: decimal">
-<li><p>The resource monitor only updates every 5 minutes. This means that jobs that cause a very quick resource spike may not be able to be detected before they start causing issues.</p></li>
-<li><p>Per-thread CPU monitoring isn’t available. It may be more instructive to see per-thread utilization rather than a machine load average when, for example, deciding whether or not to parallelize a job or seeing if a single-core function may be better replaced by a quicker one (e.g. an <code>nlme::lme()</code> on large data vs. a <code>mgcv::bam()</code>).</p></li>
-</ol>
-<p>In the above cases, <code>htop</code> is your best friend. <code>htop</code> can be accessed by logging in to the command line and typing <code>htop</code>. You will be presented with a window like the one below:</p>
-<p><img src="images/01-htop.png" /></p>
-<p>In <code>htop</code>, the meters at the top left represent the utilization of each individual core and are followed by meters for RAM and swap. Below that, you can see a table of all processes along with the user running them and some information about CPU and memory utilization.</p>
-<p>Clicking on cells in the header row will sort the processes by that column. In the above example, we can see that the table is being sorted by CPU utilization. You can also press F4 or click the <code>Filter</code> button at the bottom to enter a search term to filter rows by.</p>
+<div id="best-practices" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Best practices<a href="getting-started.html#best-practices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In general, you will want to do your work (i.e. running R code) on one of the work servers and save data to / load data from one or more of the storage servers. The connections of the servers are fast enough that speed shouldn’t be an issue.</p>
+<p>The work servers have limited local space, and this space should generally be reserved for R libraries, RStudio temporary files, etc. which are necessary for the RStudio Server to function. It’s OK to keep a few small files in your <code>/home/</code> directory (which is unique to each of the work servers), but don’t go too crazy!</p>
+<p>For guidance on which server to pick for your work, see <a href="server-information.html#picking-a-server">the section on how to pick a server to work on</a>.</p>
+</div>
+<div id="connecting-to-rstudio" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Connecting to RStudio<a href="getting-started.html#connecting-to-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>RStudio is available on port <code>8787</code> of any of the work. You can access RStudio directly by clicking on one of the links below (helpful to bookmark!):</p>
+<ul>
+<li>tiamat: <a href="http://10.174.192.10:8787/" class="uri">http://10.174.192.10:8787/</a></li>
+<li>mithra: <a href="http://10.174.192.11:8787/" class="uri">http://10.174.192.11:8787/</a></li>
+<li>dagda: <a href="http://10.174.192.12:8787/" class="uri">http://10.174.192.12:8787/</a></li>
+<li>shiva: <a href="http://10.174.192.14:8787/" class="uri">http://10.174.192.14:8787/</a></li>
+</ul>
+</div>
+<div id="connecting-to-the-command-line-of-a-server" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Connecting to the command line of a server<a href="getting-started.html#connecting-to-the-command-line-of-a-server" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In some cases, you may need to connect directly to the server command lines rather than the RStudio Servers, e.g. to kill jobs, install software, move around a lot of files, etc. RStudio Server has a Terminal tab next to the Console tab that you can use, but it may be more convenient to connect directly via SSH (“Secure Shell”, the protocol for connecting to Linux and Unix servers).</p>
+<p>To connect via SSH on macOS or Linux, open the terminal application and type <code>ssh your_username@server_ip</code>, e.g. <code>ssh jharvard@10.174.192.10</code>.</p>
+<p>To connect via SSH on Windows, you can either:</p>
+<ul>
+<li><a href="https://www.putty.org/">Install PuTTY</a>, <a href="https://mobaxterm.mobatek.net/">MobaXTerm</a>, or some other terminal client and then enter the server IP address into the main dialog, or</li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">Install Linux</a> and then type <code>ssh your_username@server_ip</code> from the Linux terminal</li>
+</ul>
+</div>
+<div id="troubleshooting-the-rstudio-server-login" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Troubleshooting the RStudio Server login<a href="getting-started.html#troubleshooting-the-rstudio-server-login" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Several issues can arise when using the RStudio Server related to saturating the CPU, memory, or I/O. If you’re having issues logging in (but the RStudio login page shows up), you can try to log in to the command line and try the following (listed in order of likeliness), or you can post to the lab Google Group:</p>
+<ul>
+<li>Running jobs: Use <code>htop</code> and press F4 to filter by <code>rsession -u [your username]</code> to see if you have a job open. If you see any jobs using up 100% CPU then likely they’re holding up the login process and the server is waiting for whatever you were running the last time you logged on to finish. If this is the case, you can either wait or press F9 to open the kill job menu and send signal 9 (SIGKILL) to terminate immediately.</li>
+<li>Full memory: Use <code>htop</code> to see if the Mem bar is full. If it is, then your session is likely swapping which means it’s processing data on-disk instead of in-memory. This is extremely slow. If all servers look like this and the CPUs look idle despite the memory usage, feel free to email me and I can reach out to the people logged in to the RStudio Server and see if they’re still running anything. Sometimes people forget about their jobs (no problem with that, of course!) and I can kill them to free up some memory.</li>
+<li>Large session cache: Use <code>du -sh ~/.local/share/rstudio/sessions/</code> to see the size of your saved sessions. Every time you log in, RStudio Server restores your last session using these files. If it’s bigger than say 10GB and you don’t want to wait you can use <code>rm -rf ~/.local/share/rstudio/sessions/</code> to remove them.</li>
+<li>Unmounted drives: Use <code>mount -a</code> and look for qnap, qnap2, qnap3, qnap4, gate (whichever you are using) and make sure the drive is there. If it’s not, then one of the network drives disconnected. Your process likely got zombified and the server needs to be restarted.</li>
+</ul>
 
 </div>
 </div>
@@ -419,8 +282,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="transferring-files.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="server-information.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
