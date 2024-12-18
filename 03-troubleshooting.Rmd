@@ -1,0 +1,16 @@
+# Troubleshooting
+
+This section lists information about how to troubleshoot various issues that might arise during regular usage.
+
+## Troubleshooting file permissions errors
+
+User IDs are not synced across the servers, so creating a directory / file on one server may prevent your account on other servers from modifying that file / directory. To fix this, log in to the terminal and run `chmod -Rv a+rw /path/to/target` on your file / directory to allow all other users to make modifications. Alternatively, if you have superuser, you can use `sudo chmod` from any account, or you can ask someone with superuser to do that for you.
+
+## Troubleshooting the RStudio Server login
+
+Several issues can arise when using the RStudio Server related to saturating the CPU, memory, or I/O. If you're having issues logging in, but the RStudio login page shows up, this means that the machine and RStudio Server are both active and the issue is likely tied to your specific live sesion. To resolve this, you can try to post to the lab Google Group or log in to the command line and try one of the following (listed in order of likeliness):
+
+- Kill running jobs: Use `htop` and press F4 to filter by `rsession -u [your username]` to see if you have a job open. If you see any jobs using up 100% CPU then likely they're holding up the login process and the server is waiting for whatever you were running the last time you logged on to finish. If this is the case, you can either wait or press F9 to open the kill job menu and send signal 9 (SIGKILL) to terminate immediately.
+- Free up memory: Use `htop` to see if the Mem bar is full. If it is, then your session is likely swapping which means it's processing data on-disk instead of in-memory. This is extremely slow. If all servers look like this and the CPUs look idle despite the memory usage, try to reach out to the people logged in to the RStudio Server and see if they're still running anything. Sometimes people forget about their jobs (no problem with that, of course!) and superusers can kill them to free up some memory.
+- Delete session cache: Use `du -sh ~/.local/share/rstudio/sessions/` to see the size of your saved sessions. Every time you log in, RStudio Server restores your last session using these files. If it's bigger than say 10GB and you don't want to wait you can use `rm -rf ~/.local/share/rstudio/sessions/` to remove them.
+- Check for unmounted drives: Use `mount -a` and make sure the drive holding the data that you were using is there. If it's not, then one of the network drives disconnected. As a result, your process likely got zombified and the server needs to be restarted.

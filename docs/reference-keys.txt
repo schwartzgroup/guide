@@ -5,7 +5,6 @@ topology-of-the-lab-servers
 best-practices
 connecting-to-rstudio
 connecting-to-the-command-line-of-a-server
-troubleshooting-the-rstudio-server-login
 server-information
 server-info
 server-resource-monitor
@@ -13,6 +12,9 @@ load-average
 memory-utilization
 picking-a-server
 more-precise-monitoring
+troubleshooting
+troubleshooting-file-permissions-errors
+troubleshooting-the-rstudio-server-login
 transferring-files
 simple-transfers-scp
 transferring-files-1

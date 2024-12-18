@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Server information | Joel’s lab guide</title>
-  <meta name="description" content="4 Server information | Joel’s lab guide" />
+  <title>4 Troubleshooting | Joel’s lab guide</title>
+  <meta name="description" content="4 Troubleshooting | Joel’s lab guide" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Server information | Joel’s lab guide" />
+  <meta property="og:title" content="4 Troubleshooting | Joel’s lab guide" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Server information | Joel’s lab guide" />
+  <meta name="twitter:title" content="4 Troubleshooting | Joel’s lab guide" />
   
   
   
@@ -155,9 +155,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="server-information.html"><a href="server-information.html#picking-a-server"><i class="fa fa-check"></i><b>3.3</b> How to pick a server to work on</a></li>
 <li class="chapter" data-level="3.4" data-path="server-information.html"><a href="server-information.html#more-precise-monitoring"><i class="fa fa-check"></i><b>3.4</b> More precise monitoring</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="server-information-1.html"><a href="server-information-1.html"><i class="fa fa-check"></i><b>4</b> Server information</a>
+<li class="chapter" data-level="4" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>4</b> Troubleshooting</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="server-information-1.html"><a href="server-information-1.html#troubleshooting-the-rstudio-server-login"><i class="fa fa-check"></i><b>4.1</b> Troubleshooting the RStudio Server login</a></li>
+<li class="chapter" data-level="4.1" data-path="troubleshooting.html"><a href="troubleshooting.html#troubleshooting-file-permissions-errors"><i class="fa fa-check"></i><b>4.1</b> Troubleshooting file permissions errors</a></li>
+<li class="chapter" data-level="4.2" data-path="troubleshooting.html"><a href="troubleshooting.html#troubleshooting-the-rstudio-server-login"><i class="fa fa-check"></i><b>4.2</b> Troubleshooting the RStudio Server login</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="transferring-files.html"><a href="transferring-files.html"><i class="fa fa-check"></i><b>5</b> Transferring files</a>
 <ul>
@@ -218,17 +219,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="server-information-1" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">4</span> Server information<a href="server-information-1.html#server-information-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="troubleshooting" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Troubleshooting<a href="troubleshooting.html#troubleshooting" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>This section lists information about how to troubleshoot various issues that might arise during regular usage.</p>
-<div id="troubleshooting-the-rstudio-server-login" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Troubleshooting the RStudio Server login<a href="server-information-1.html#troubleshooting-the-rstudio-server-login" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Several issues can arise when using the RStudio Server related to saturating the CPU, memory, or I/O. If you’re having issues logging in, but the RStudio login page shows up, this means that the machine and RStudio Server are both active and the issue is likely tied to your specific live sesion. To resolve this, you can try to post to the lab Google Group or log in to the command line and try the following (listed in order of likeliness):</p>
+<div id="troubleshooting-file-permissions-errors" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Troubleshooting file permissions errors<a href="troubleshooting.html#troubleshooting-file-permissions-errors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>User IDs are not synced across the servers, so creating a directory / file on one server may prevent your account on other servers from modifying that file / directory. To fix this, log in to the terminal and run <code>chmod -Rv a+rw /path/to/target</code> on your file / directory to allow all other users to make modifications. Alternatively, if you have superuser, you can use <code>sudo chmod</code> from any account, or you can ask someone with superuser to do that for you.</p>
+</div>
+<div id="troubleshooting-the-rstudio-server-login" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Troubleshooting the RStudio Server login<a href="troubleshooting.html#troubleshooting-the-rstudio-server-login" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Several issues can arise when using the RStudio Server related to saturating the CPU, memory, or I/O. If you’re having issues logging in, but the RStudio login page shows up, this means that the machine and RStudio Server are both active and the issue is likely tied to your specific live sesion. To resolve this, you can try to post to the lab Google Group or log in to the command line and try one of the following (listed in order of likeliness):</p>
 <ul>
-<li>Running jobs: Use <code>htop</code> and press F4 to filter by <code>rsession -u [your username]</code> to see if you have a job open. If you see any jobs using up 100% CPU then likely they’re holding up the login process and the server is waiting for whatever you were running the last time you logged on to finish. If this is the case, you can either wait or press F9 to open the kill job menu and send signal 9 (SIGKILL) to terminate immediately.</li>
-<li>Full memory: Use <code>htop</code> to see if the Mem bar is full. If it is, then your session is likely swapping which means it’s processing data on-disk instead of in-memory. This is extremely slow. If all servers look like this and the CPUs look idle despite the memory usage, feel free to email me and I can reach out to the people logged in to the RStudio Server and see if they’re still running anything. Sometimes people forget about their jobs (no problem with that, of course!) and I can kill them to free up some memory.</li>
-<li>Large session cache: Use <code>du -sh ~/.local/share/rstudio/sessions/</code> to see the size of your saved sessions. Every time you log in, RStudio Server restores your last session using these files. If it’s bigger than say 10GB and you don’t want to wait you can use <code>rm -rf ~/.local/share/rstudio/sessions/</code> to remove them.</li>
-<li>Unmounted drives: Use <code>mount -a</code> and look for qnap, qnap2, qnap3, qnap4, gate (whichever you are using) and make sure the drive is there. If it’s not, then one of the network drives disconnected. Your process likely got zombified and the server needs to be restarted.</li>
+<li>Kill running jobs: Use <code>htop</code> and press F4 to filter by <code>rsession -u [your username]</code> to see if you have a job open. If you see any jobs using up 100% CPU then likely they’re holding up the login process and the server is waiting for whatever you were running the last time you logged on to finish. If this is the case, you can either wait or press F9 to open the kill job menu and send signal 9 (SIGKILL) to terminate immediately.</li>
+<li>Free up memory: Use <code>htop</code> to see if the Mem bar is full. If it is, then your session is likely swapping which means it’s processing data on-disk instead of in-memory. This is extremely slow. If all servers look like this and the CPUs look idle despite the memory usage, try to reach out to the people logged in to the RStudio Server and see if they’re still running anything. Sometimes people forget about their jobs (no problem with that, of course!) and superusers can kill them to free up some memory.</li>
+<li>Delete session cache: Use <code>du -sh ~/.local/share/rstudio/sessions/</code> to see the size of your saved sessions. Every time you log in, RStudio Server restores your last session using these files. If it’s bigger than say 10GB and you don’t want to wait you can use <code>rm -rf ~/.local/share/rstudio/sessions/</code> to remove them.</li>
+<li>Check for unmounted drives: Use <code>mount -a</code> and make sure the drive holding the data that you were using is there. If it’s not, then one of the network drives disconnected. As a result, your process likely got zombified and the server needs to be restarted.</li>
 </ul>
 
 </div>

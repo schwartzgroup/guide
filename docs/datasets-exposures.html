@@ -4,25 +4,25 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Datasets: Exposures | Joel’s lab guide</title>
-  <meta name="description" content="6 Datasets: Exposures | Joel’s lab guide" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <title>7 Datasets: Exposures | Joel’s lab guide</title>
+  <meta name="description" content="7 Datasets: Exposures | Joel’s lab guide" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Datasets: Exposures | Joel’s lab guide" />
+  <meta property="og:title" content="7 Datasets: Exposures | Joel’s lab guide" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Datasets: Exposures | Joel’s lab guide" />
+  <meta name="twitter:title" content="7 Datasets: Exposures | Joel’s lab guide" />
   
   
   
 
 
 
-<meta name="date" content="2023-05-22" />
+<meta name="date" content="2024-12-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -65,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -143,7 +143,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="getting-started.html"><a href="getting-started.html#best-practices"><i class="fa fa-check"></i><b>2.3</b> Best practices</a></li>
 <li class="chapter" data-level="2.4" data-path="getting-started.html"><a href="getting-started.html#connecting-to-rstudio"><i class="fa fa-check"></i><b>2.4</b> Connecting to RStudio</a></li>
 <li class="chapter" data-level="2.5" data-path="getting-started.html"><a href="getting-started.html#connecting-to-the-command-line-of-a-server"><i class="fa fa-check"></i><b>2.5</b> Connecting to the command line of a server</a></li>
-<li class="chapter" data-level="2.6" data-path="getting-started.html"><a href="getting-started.html#troubleshooting-the-rstudio-server-login"><i class="fa fa-check"></i><b>2.6</b> Troubleshooting the RStudio Server login</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="server-information.html"><a href="server-information.html"><i class="fa fa-check"></i><b>3</b> Server information</a>
 <ul>
@@ -156,48 +155,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="server-information.html"><a href="server-information.html#picking-a-server"><i class="fa fa-check"></i><b>3.3</b> How to pick a server to work on</a></li>
 <li class="chapter" data-level="3.4" data-path="server-information.html"><a href="server-information.html#more-precise-monitoring"><i class="fa fa-check"></i><b>3.4</b> More precise monitoring</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="transferring-files.html"><a href="transferring-files.html"><i class="fa fa-check"></i><b>4</b> Transferring files</a>
+<li class="chapter" data-level="4" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>4</b> Troubleshooting</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="transferring-files.html"><a href="transferring-files.html#simple-transfers-scp"><i class="fa fa-check"></i><b>4.1</b> Simple transfers: <code>scp</code></a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="transferring-files.html"><a href="transferring-files.html#transferring-files-1"><i class="fa fa-check"></i><b>4.1.1</b> Transferring files</a></li>
-<li class="chapter" data-level="4.1.2" data-path="transferring-files.html"><a href="transferring-files.html#transferring-folders"><i class="fa fa-check"></i><b>4.1.2</b> Transferring folders</a></li>
-<li class="chapter" data-level="4.1.3" data-path="transferring-files.html"><a href="transferring-files.html#other-scp-options"><i class="fa fa-check"></i><b>4.1.3</b> Other <code>scp</code> options</a></li>
+<li class="chapter" data-level="4.1" data-path="troubleshooting.html"><a href="troubleshooting.html#troubleshooting-file-permissions-errors"><i class="fa fa-check"></i><b>4.1</b> Troubleshooting file permissions errors</a></li>
+<li class="chapter" data-level="4.2" data-path="troubleshooting.html"><a href="troubleshooting.html#troubleshooting-the-rstudio-server-login"><i class="fa fa-check"></i><b>4.2</b> Troubleshooting the RStudio Server login</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="transferring-files.html"><a href="transferring-files.html#large-transfers-rsync"><i class="fa fa-check"></i><b>4.2</b> Large transfers: <code>rsync</code></a>
+<li class="chapter" data-level="5" data-path="transferring-files.html"><a href="transferring-files.html"><i class="fa fa-check"></i><b>5</b> Transferring files</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="transferring-files.html"><a href="transferring-files.html#other-rsync-options"><i class="fa fa-check"></i><b>4.2.1</b> Other rsync options</a></li>
+<li class="chapter" data-level="5.1" data-path="transferring-files.html"><a href="transferring-files.html#simple-transfers-scp"><i class="fa fa-check"></i><b>5.1</b> Simple transfers: <code>scp</code></a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="transferring-files.html"><a href="transferring-files.html#transferring-files-1"><i class="fa fa-check"></i><b>5.1.1</b> Transferring files</a></li>
+<li class="chapter" data-level="5.1.2" data-path="transferring-files.html"><a href="transferring-files.html#transferring-folders"><i class="fa fa-check"></i><b>5.1.2</b> Transferring folders</a></li>
+<li class="chapter" data-level="5.1.3" data-path="transferring-files.html"><a href="transferring-files.html#other-scp-options"><i class="fa fa-check"></i><b>5.1.3</b> Other <code>scp</code> options</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="transferring-files.html"><a href="transferring-files.html#interacting-with-the-cloud-rclone"><i class="fa fa-check"></i><b>4.3</b> Interacting with the cloud: <code>rclone</code></a></li>
+<li class="chapter" data-level="5.2" data-path="transferring-files.html"><a href="transferring-files.html#large-transfers-rsync"><i class="fa fa-check"></i><b>5.2</b> Large transfers: <code>rsync</code></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="transferring-files.html"><a href="transferring-files.html#other-rsync-options"><i class="fa fa-check"></i><b>5.2.1</b> Other rsync options</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html"><i class="fa fa-check"></i><b>5</b> Special instructions for specific software</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#gurobi"><i class="fa fa-check"></i><b>5.1</b> Gurobi</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#use"><i class="fa fa-check"></i><b>5.1.1</b> Use</a></li>
-<li class="chapter" data-level="5.1.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installation"><i class="fa fa-check"></i><b>5.1.2</b> Installation</a>
-<ul>
-<li class="chapter" data-level="5.1.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#download-gurobi-and-upload-to-the-server"><i class="fa fa-check"></i><b>5.1.2.1</b> Download Gurobi and upload to the server</a></li>
-<li class="chapter" data-level="5.1.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#decompress-to-opt"><i class="fa fa-check"></i><b>5.1.2.2</b> Decompress to <code>/opt/</code></a></li>
-<li class="chapter" data-level="5.1.2.3" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#enable-for-command-line-users"><i class="fa fa-check"></i><b>5.1.2.3</b> Enable for command-line users</a></li>
-<li class="chapter" data-level="5.1.2.4" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#enable-for-rstudio-server-users"><i class="fa fa-check"></i><b>5.1.2.4</b> Enable for RStudio Server users</a></li>
-<li class="chapter" data-level="5.1.2.5" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install-the-r-package"><i class="fa fa-check"></i><b>5.1.2.5</b> Install the R package</a></li>
+<li class="chapter" data-level="5.3" data-path="transferring-files.html"><a href="transferring-files.html#interacting-with-the-cloud-rclone"><i class="fa fa-check"></i><b>5.3</b> Interacting with the cloud: <code>rclone</code></a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#fbkmr"><i class="fa fa-check"></i><b>5.2</b> fbkmr</a>
+<li class="chapter" data-level="6" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html"><i class="fa fa-check"></i><b>6</b> Special instructions for specific software</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-dependencies"><i class="fa fa-check"></i><b>5.2.1</b> Installing dependencies</a></li>
-<li class="chapter" data-level="5.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-fbkmr"><i class="fa fa-check"></i><b>5.2.2</b> Installing <code>fbkmr</code></a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#rqpd"><i class="fa fa-check"></i><b>5.3</b> RQPD</a>
+<li class="chapter" data-level="6.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#gurobi"><i class="fa fa-check"></i><b>6.1</b> Gurobi</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#clone-the-rqpd-subversion-repository"><i class="fa fa-check"></i><b>5.3.1</b> Clone the RQPD Subversion repository</a></li>
-<li class="chapter" data-level="5.3.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install"><i class="fa fa-check"></i><b>5.3.2</b> Install</a></li>
+<li class="chapter" data-level="6.1.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#use"><i class="fa fa-check"></i><b>6.1.1</b> Use</a></li>
+<li class="chapter" data-level="6.1.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installation"><i class="fa fa-check"></i><b>6.1.2</b> Installation</a>
+<ul>
+<li class="chapter" data-level="6.1.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#download-gurobi-and-upload-to-the-server"><i class="fa fa-check"></i><b>6.1.2.1</b> Download Gurobi and upload to the server</a></li>
+<li class="chapter" data-level="6.1.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#decompress-to-opt"><i class="fa fa-check"></i><b>6.1.2.2</b> Decompress to <code>/opt/</code></a></li>
+<li class="chapter" data-level="6.1.2.3" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#enable-for-command-line-users"><i class="fa fa-check"></i><b>6.1.2.3</b> Enable for command-line users</a></li>
+<li class="chapter" data-level="6.1.2.4" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#enable-for-rstudio-server-users"><i class="fa fa-check"></i><b>6.1.2.4</b> Enable for RStudio Server users</a></li>
+<li class="chapter" data-level="6.1.2.5" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install-the-r-package"><i class="fa fa-check"></i><b>6.1.2.5</b> Install the R package</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="datasets-exposures.html"><a href="datasets-exposures.html"><i class="fa fa-check"></i><b>6</b> Datasets: Exposures</a></li>
-<li class="chapter" data-level="7" data-path="datasets-outcomes.html"><a href="datasets-outcomes.html"><i class="fa fa-check"></i><b>7</b> Datasets: Outcomes</a></li>
-<li class="chapter" data-level="8" data-path="datasets-covariates.html"><a href="datasets-covariates.html"><i class="fa fa-check"></i><b>8</b> Datasets: Covariates</a></li>
+<li class="chapter" data-level="6.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#fbkmr"><i class="fa fa-check"></i><b>6.2</b> fbkmr</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-dependencies"><i class="fa fa-check"></i><b>6.2.1</b> Installing dependencies</a></li>
+<li class="chapter" data-level="6.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-fbkmr"><i class="fa fa-check"></i><b>6.2.2</b> Installing <code>fbkmr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#rqpd"><i class="fa fa-check"></i><b>6.3</b> RQPD</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#clone-the-rqpd-subversion-repository"><i class="fa fa-check"></i><b>6.3.1</b> Clone the RQPD Subversion repository</a></li>
+<li class="chapter" data-level="6.3.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install"><i class="fa fa-check"></i><b>6.3.2</b> Install</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="datasets-exposures.html"><a href="datasets-exposures.html"><i class="fa fa-check"></i><b>7</b> Datasets: Exposures</a></li>
+<li class="chapter" data-level="8" data-path="datasets-outcomes.html"><a href="datasets-outcomes.html"><i class="fa fa-check"></i><b>8</b> Datasets: Outcomes</a></li>
+<li class="chapter" data-level="9" data-path="datasets-covariates.html"><a href="datasets-covariates.html"><i class="fa fa-check"></i><b>9</b> Datasets: Covariates</a></li>
 </ul>
 
       </nav>
@@ -215,8 +219,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="datasets-exposures" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">6</span> Datasets: Exposures<a href="datasets-exposures.html#datasets-exposures" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="datasets-exposures" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Datasets: Exposures<a href="datasets-exposures.html#datasets-exposures" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 
 </div>
             </section>

@@ -4,19 +4,19 @@ This section lists information about the various servers and how to assess their
 
 ## Server attributes {#server-info}
 
-The following table lists attributes of the servers as of March 23, 2023.
+The following table lists attributes of the servers as of December 18, 2024.
 
-| type    | name   | ip            | cores | threads | max clock | memory | capacity |
-| :-:     | :-:    | :-:           | :-:   | :-:     | :-:       | :-:    | :-:      |
-| Work    | tiamat | 10.174.192.10 | 24    | 48      | 3.2 GHz   | 512 GB | 1.8 TB   |
-| Work    | mithra | 10.174.192.11 | 20    | 40      | 4.5 GHz   | 384 GB | 1.9 TB   |
-| Work    | dagda  | 10.174.192.12 | 16    | 16      | 2.8 GHz   | 128 GB | 220 GB   |
-| Work    | shiva  | 10.174.192.14 | 24    | 48      | 3.2 GHz   | 512 GB | 1.8 TB   |
-| Storage | gate   | 10.174.192.20 | unk.  | unk.    | unk.      | unk.   | 32 TB    |
-| Storage | qnap   | 10.174.192.21 | 4     | 4       | 2.4 MHz   | 2 GB   | 29 TB    |
-| Storage | qnap2  | 10.174.192.22 | unk.  | unk.    | unk.      | unk.   | 44 TB    |
-| Storage | qnap3  | 10.174.192.23 | 4     | 4       | 1.7 GHz   | 2 GB   | 87 TB    |
-| Storage | qnap4  | 10.174.192.24 | 4     | 4       | 1.7 GHz   | 4 GB   | 2.7 TB   |
+| type    | name    | ip             | CPU  | threads | max clock | memory | capacity |
+| :-:     | :-:     | :-:            | :-:  | :-:     | :-:       | :-:    | :-:      |
+| Work    | tiamat  | 10.174.192.10  | 24   | 48      | 3.2 GHz   | 512 GB | 1.8 TB   |
+| Work    | mithra  | 10.174.192.11  | 20   | 40      | 4.5 GHz   | 384 GB | 1.9 TB   |
+| Work    | dagda   | 10.174.192.12  | 16   | 16      | 2.8 GHz   | 128 GB | 220 GB   |
+| Work    | shiva   | 10.174.192.14  | 24   | 48      | 3.2 GHz   | 512 GB | 1.8 TB   |
+| Work    | gcmc-js | 10.174.192.15  | 11   | 22      | 3.2 GHz   | 756 GB | 116 GB   |
+| Storage | Isilon  | 10.174.191.128 | unk. | unk.    | unk.      | unk.   | 245 TB   |
+| Storage | qnap2   | 10.174.192.22  | unk. | unk.    | unk.      | unk.   | 29 TB    |
+| Storage | qnap3   | 10.174.192.23  | 4    | 4       | 1.7 GHz   | 2 GB   | 44 TB    |
+| Storage | qnap5   | 10.174.192.23  | unk. | unk.    | unk.      | unk.   | 26 TB    |
 
 Notes:
 
@@ -25,15 +25,21 @@ Notes:
 - To assess memory: `sudo dmidecode -t memory`
 - To assess disk: `df -h`
 
+Machine-specific notes:
+
+- `gate`, `qnap`, and `qnap4` no longer exist and the data has been migrated to the `Isilon` machine. The original mount points of `/media/gate/`, `/media/qnap/`, and `/media/qnap4/` still exist but are just symbolic links to directories in `/media/Isilon/`.
+- `Isilon` is shared storage for the whole school. The full storage capacity may not be available.
+- `gcmc-js` is a virtual machine, so performance may be degraded compared to the bare metal machines.
+
 ## Server resource monitor
 
-[Munin](http://munin-monitoring.org/) is available on the servers for resource monitoring purposes. This can be used, for example, to:
+[Munin](http://munin-monitoring.org/) is available for resource monitoring purposes. This can be used, for example, to:
 
 - Determine what machines are available for running jobs;
 - Help debug the causes of crashes and freezes; and
 - Know ahead-of-time what potential problems may cause a machine to crash before it does.
 
-Munin is hosted on the `dagda` machine due to its low utilization compared to the other machines. To access Munin, navigate to [10.174.192.12:8080/munin/](http://10.174.192.12:8080/munin/) in your browser. You will be greeted with the following screen:
+Munin is hosted on the `dagda` machine due to its low utilization compared to the other machines. To access Munin, navigate to <http://sph-dagda.sph.harvard.edu:8080/munin> <http://10.174.192.12:8080/munin/> in your browser. You will be greeted with the following screen:
 
 ![](images/01-munin-home.png){width=600px}
 

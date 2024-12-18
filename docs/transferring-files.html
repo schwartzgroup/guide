@@ -4,32 +4,32 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Transferring files | Joel’s lab guide</title>
-  <meta name="description" content="4 Transferring files | Joel’s lab guide" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <title>5 Transferring files | Joel’s lab guide</title>
+  <meta name="description" content="5 Transferring files | Joel’s lab guide" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Transferring files | Joel’s lab guide" />
+  <meta property="og:title" content="5 Transferring files | Joel’s lab guide" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Transferring files | Joel’s lab guide" />
+  <meta name="twitter:title" content="5 Transferring files | Joel’s lab guide" />
   
   
   
 
 
 
-<meta name="date" content="2023-05-22" />
+<meta name="date" content="2024-12-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="server-information.html"/>
+<link rel="prev" href="troubleshooting.html"/>
 <link rel="next" href="special-instructions-for-specific-software.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -65,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -143,7 +143,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="getting-started.html"><a href="getting-started.html#best-practices"><i class="fa fa-check"></i><b>2.3</b> Best practices</a></li>
 <li class="chapter" data-level="2.4" data-path="getting-started.html"><a href="getting-started.html#connecting-to-rstudio"><i class="fa fa-check"></i><b>2.4</b> Connecting to RStudio</a></li>
 <li class="chapter" data-level="2.5" data-path="getting-started.html"><a href="getting-started.html#connecting-to-the-command-line-of-a-server"><i class="fa fa-check"></i><b>2.5</b> Connecting to the command line of a server</a></li>
-<li class="chapter" data-level="2.6" data-path="getting-started.html"><a href="getting-started.html#troubleshooting-the-rstudio-server-login"><i class="fa fa-check"></i><b>2.6</b> Troubleshooting the RStudio Server login</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="server-information.html"><a href="server-information.html"><i class="fa fa-check"></i><b>3</b> Server information</a>
 <ul>
@@ -156,48 +155,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="server-information.html"><a href="server-information.html#picking-a-server"><i class="fa fa-check"></i><b>3.3</b> How to pick a server to work on</a></li>
 <li class="chapter" data-level="3.4" data-path="server-information.html"><a href="server-information.html#more-precise-monitoring"><i class="fa fa-check"></i><b>3.4</b> More precise monitoring</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="transferring-files.html"><a href="transferring-files.html"><i class="fa fa-check"></i><b>4</b> Transferring files</a>
+<li class="chapter" data-level="4" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>4</b> Troubleshooting</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="transferring-files.html"><a href="transferring-files.html#simple-transfers-scp"><i class="fa fa-check"></i><b>4.1</b> Simple transfers: <code>scp</code></a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="transferring-files.html"><a href="transferring-files.html#transferring-files-1"><i class="fa fa-check"></i><b>4.1.1</b> Transferring files</a></li>
-<li class="chapter" data-level="4.1.2" data-path="transferring-files.html"><a href="transferring-files.html#transferring-folders"><i class="fa fa-check"></i><b>4.1.2</b> Transferring folders</a></li>
-<li class="chapter" data-level="4.1.3" data-path="transferring-files.html"><a href="transferring-files.html#other-scp-options"><i class="fa fa-check"></i><b>4.1.3</b> Other <code>scp</code> options</a></li>
+<li class="chapter" data-level="4.1" data-path="troubleshooting.html"><a href="troubleshooting.html#troubleshooting-file-permissions-errors"><i class="fa fa-check"></i><b>4.1</b> Troubleshooting file permissions errors</a></li>
+<li class="chapter" data-level="4.2" data-path="troubleshooting.html"><a href="troubleshooting.html#troubleshooting-the-rstudio-server-login"><i class="fa fa-check"></i><b>4.2</b> Troubleshooting the RStudio Server login</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="transferring-files.html"><a href="transferring-files.html#large-transfers-rsync"><i class="fa fa-check"></i><b>4.2</b> Large transfers: <code>rsync</code></a>
+<li class="chapter" data-level="5" data-path="transferring-files.html"><a href="transferring-files.html"><i class="fa fa-check"></i><b>5</b> Transferring files</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="transferring-files.html"><a href="transferring-files.html#other-rsync-options"><i class="fa fa-check"></i><b>4.2.1</b> Other rsync options</a></li>
+<li class="chapter" data-level="5.1" data-path="transferring-files.html"><a href="transferring-files.html#simple-transfers-scp"><i class="fa fa-check"></i><b>5.1</b> Simple transfers: <code>scp</code></a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="transferring-files.html"><a href="transferring-files.html#transferring-files-1"><i class="fa fa-check"></i><b>5.1.1</b> Transferring files</a></li>
+<li class="chapter" data-level="5.1.2" data-path="transferring-files.html"><a href="transferring-files.html#transferring-folders"><i class="fa fa-check"></i><b>5.1.2</b> Transferring folders</a></li>
+<li class="chapter" data-level="5.1.3" data-path="transferring-files.html"><a href="transferring-files.html#other-scp-options"><i class="fa fa-check"></i><b>5.1.3</b> Other <code>scp</code> options</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="transferring-files.html"><a href="transferring-files.html#interacting-with-the-cloud-rclone"><i class="fa fa-check"></i><b>4.3</b> Interacting with the cloud: <code>rclone</code></a></li>
+<li class="chapter" data-level="5.2" data-path="transferring-files.html"><a href="transferring-files.html#large-transfers-rsync"><i class="fa fa-check"></i><b>5.2</b> Large transfers: <code>rsync</code></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="transferring-files.html"><a href="transferring-files.html#other-rsync-options"><i class="fa fa-check"></i><b>5.2.1</b> Other rsync options</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html"><i class="fa fa-check"></i><b>5</b> Special instructions for specific software</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#gurobi"><i class="fa fa-check"></i><b>5.1</b> Gurobi</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#use"><i class="fa fa-check"></i><b>5.1.1</b> Use</a></li>
-<li class="chapter" data-level="5.1.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installation"><i class="fa fa-check"></i><b>5.1.2</b> Installation</a>
-<ul>
-<li class="chapter" data-level="5.1.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#download-gurobi-and-upload-to-the-server"><i class="fa fa-check"></i><b>5.1.2.1</b> Download Gurobi and upload to the server</a></li>
-<li class="chapter" data-level="5.1.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#decompress-to-opt"><i class="fa fa-check"></i><b>5.1.2.2</b> Decompress to <code>/opt/</code></a></li>
-<li class="chapter" data-level="5.1.2.3" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#enable-for-command-line-users"><i class="fa fa-check"></i><b>5.1.2.3</b> Enable for command-line users</a></li>
-<li class="chapter" data-level="5.1.2.4" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#enable-for-rstudio-server-users"><i class="fa fa-check"></i><b>5.1.2.4</b> Enable for RStudio Server users</a></li>
-<li class="chapter" data-level="5.1.2.5" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install-the-r-package"><i class="fa fa-check"></i><b>5.1.2.5</b> Install the R package</a></li>
+<li class="chapter" data-level="5.3" data-path="transferring-files.html"><a href="transferring-files.html#interacting-with-the-cloud-rclone"><i class="fa fa-check"></i><b>5.3</b> Interacting with the cloud: <code>rclone</code></a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#fbkmr"><i class="fa fa-check"></i><b>5.2</b> fbkmr</a>
+<li class="chapter" data-level="6" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html"><i class="fa fa-check"></i><b>6</b> Special instructions for specific software</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-dependencies"><i class="fa fa-check"></i><b>5.2.1</b> Installing dependencies</a></li>
-<li class="chapter" data-level="5.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-fbkmr"><i class="fa fa-check"></i><b>5.2.2</b> Installing <code>fbkmr</code></a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#rqpd"><i class="fa fa-check"></i><b>5.3</b> RQPD</a>
+<li class="chapter" data-level="6.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#gurobi"><i class="fa fa-check"></i><b>6.1</b> Gurobi</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#clone-the-rqpd-subversion-repository"><i class="fa fa-check"></i><b>5.3.1</b> Clone the RQPD Subversion repository</a></li>
-<li class="chapter" data-level="5.3.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install"><i class="fa fa-check"></i><b>5.3.2</b> Install</a></li>
+<li class="chapter" data-level="6.1.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#use"><i class="fa fa-check"></i><b>6.1.1</b> Use</a></li>
+<li class="chapter" data-level="6.1.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installation"><i class="fa fa-check"></i><b>6.1.2</b> Installation</a>
+<ul>
+<li class="chapter" data-level="6.1.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#download-gurobi-and-upload-to-the-server"><i class="fa fa-check"></i><b>6.1.2.1</b> Download Gurobi and upload to the server</a></li>
+<li class="chapter" data-level="6.1.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#decompress-to-opt"><i class="fa fa-check"></i><b>6.1.2.2</b> Decompress to <code>/opt/</code></a></li>
+<li class="chapter" data-level="6.1.2.3" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#enable-for-command-line-users"><i class="fa fa-check"></i><b>6.1.2.3</b> Enable for command-line users</a></li>
+<li class="chapter" data-level="6.1.2.4" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#enable-for-rstudio-server-users"><i class="fa fa-check"></i><b>6.1.2.4</b> Enable for RStudio Server users</a></li>
+<li class="chapter" data-level="6.1.2.5" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install-the-r-package"><i class="fa fa-check"></i><b>6.1.2.5</b> Install the R package</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="datasets-exposures.html"><a href="datasets-exposures.html"><i class="fa fa-check"></i><b>6</b> Datasets: Exposures</a></li>
-<li class="chapter" data-level="7" data-path="datasets-outcomes.html"><a href="datasets-outcomes.html"><i class="fa fa-check"></i><b>7</b> Datasets: Outcomes</a></li>
-<li class="chapter" data-level="8" data-path="datasets-covariates.html"><a href="datasets-covariates.html"><i class="fa fa-check"></i><b>8</b> Datasets: Covariates</a></li>
+<li class="chapter" data-level="6.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#fbkmr"><i class="fa fa-check"></i><b>6.2</b> fbkmr</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-dependencies"><i class="fa fa-check"></i><b>6.2.1</b> Installing dependencies</a></li>
+<li class="chapter" data-level="6.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-fbkmr"><i class="fa fa-check"></i><b>6.2.2</b> Installing <code>fbkmr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#rqpd"><i class="fa fa-check"></i><b>6.3</b> RQPD</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#clone-the-rqpd-subversion-repository"><i class="fa fa-check"></i><b>6.3.1</b> Clone the RQPD Subversion repository</a></li>
+<li class="chapter" data-level="6.3.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install"><i class="fa fa-check"></i><b>6.3.2</b> Install</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="datasets-exposures.html"><a href="datasets-exposures.html"><i class="fa fa-check"></i><b>7</b> Datasets: Exposures</a></li>
+<li class="chapter" data-level="8" data-path="datasets-outcomes.html"><a href="datasets-outcomes.html"><i class="fa fa-check"></i><b>8</b> Datasets: Outcomes</a></li>
+<li class="chapter" data-level="9" data-path="datasets-covariates.html"><a href="datasets-covariates.html"><i class="fa fa-check"></i><b>9</b> Datasets: Covariates</a></li>
 </ul>
 
       </nav>
@@ -215,8 +219,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="transferring-files" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">4</span> Transferring files<a href="transferring-files.html#transferring-files" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="transferring-files" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Transferring files<a href="transferring-files.html#transferring-files" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Last updated March 24, 2022</p>
 <p>This guide contains some instructions for transferring files securely via SSH to Linux and other Unix/Unix-like servers.</p>
 <p>Formatting notes:</p>
@@ -224,36 +228,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Throughout the document I will be using <code>monospace font</code> to refer to commands, command arguments, files, and other keywords.</li>
 <li>Every section will have an example located right after the paragraph that begins with the bolded words <strong>For example</strong>, so if you’re in a rush you can just CTRL-F!</li>
 </ul>
-<div id="simple-transfers-scp" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> Simple transfers: <code>scp</code><a href="transferring-files.html#simple-transfers-scp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="simple-transfers-scp" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Simple transfers: <code>scp</code><a href="transferring-files.html#simple-transfers-scp" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>scp</code> (“secure copy”) is a program that exists by default on all modern UNIX-like systems and uses an SSH connection to transfer data to a remote server. This is what most SSH consoles use in the background, I believe - MobaXTerm, PuTTY, etc. Basic usage is similar to the normal copy command and takes the form:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="transferring-files.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> [-options] source dest</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="transferring-files.html#cb1-1" tabindex="-1"></a><span class="fu">scp</span> <span class="pp">[-</span><span class="ss">options</span><span class="pp">]</span> source dest</span></code></pre></div>
 <p>where <code>source</code> and <code>dest</code> are the source and destination paths (relative to the home folder) and <code>-options</code> is an optional list of options. The “remote” part comes into play by specifying a prefix for the source, destination, or both that indicates what machine the path is pointing to, if not the current machine, by <code>using user@hostname.or.ip.address:</code>. For this tutorial I have aliased the server IP addresses to <code>joel-tiamat</code>, <code>joel-mithra</code>, etc. using my <a href="https://www.ssh.com/academy/ssh/config">SSH config</a>, but that is beyond the scope of this tutorial.</p>
-<div id="transferring-files-1" class="section level3 hasAnchor" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> Transferring files<a href="transferring-files.html#transferring-files-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="transferring-files-1" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Transferring files<a href="transferring-files.html#transferring-files-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>For example</strong>, if I want to copy the file <code>a.txt</code>, in the current directory, from my computer to my home directory on one of the servers:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="transferring-files.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> test/a.txt joel-tiamat:/home/edgar/</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="transferring-files.html#cb2-1" tabindex="-1"></a><span class="fu">scp</span> test/a.txt joel-tiamat:/home/edgar/</span></code></pre></div>
 <p>What this looks like in practice:</p>
 <p><img src="images/02-scp-file.png" /></p>
 <p>Note that you are able to see the progress of the transfer while it is transferring. In the above screenshot it just shows up as “100%” but in practice this will start at 0% and update every few milliseconds.</p>
 <p>Similarly, I can copy the file back by simply reversing the order of paths:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="transferring-files.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> joel-tiamat:/home/edgar/a.txt ~/test/</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="transferring-files.html#cb3-1" tabindex="-1"></a><span class="fu">scp</span> joel-tiamat:/home/edgar/a.txt ~/test/</span></code></pre></div>
 <p>Or, I can transfer the copy from one machine to a different remote machine:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="transferring-files.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> joel-tiamat:/home/edgar/a.txt joel-mithra:/home/edgar/</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="transferring-files.html#cb4-1" tabindex="-1"></a><span class="fu">scp</span> joel-tiamat:/home/edgar/a.txt joel-mithra:/home/edgar/</span></code></pre></div>
 <p>The last command might be useful if you are transferring a big file that you do not have space for on your computer if you cannot grant direct access from one machine to the other – otherwise, it’s always faster to just do a direct transfer between the machines because it takes your computer out of the equation.</p>
 </div>
-<div id="transferring-folders" class="section level3 hasAnchor" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> Transferring folders<a href="transferring-files.html#transferring-folders" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="transferring-folders" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Transferring folders<a href="transferring-files.html#transferring-folders" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If you want to transfer a folder instead of a file, you can use the same command but you must now add the -r (recursive)</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="transferring-files.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> source dest</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="transferring-files.html#cb5-1" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> source dest</span></code></pre></div>
 <p><strong>For example</strong>, say I want to copy the entire folder containing <code>a.txt</code> instead of just <code>a.txt</code>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="transferring-files.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> test/ joel-tiamat:/home/edgar</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="transferring-files.html#cb6-1" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-r</span> test/ joel-tiamat:/home/edgar</span></code></pre></div>
 <p>Output is the same as before, but you can now see multiple files being transferred:</p>
 <p><img src="images/02-scp-directory.png" /></p>
 <p>As before, you can copy something to your machine instead of from your machine by reversing the paths.</p>
 </div>
-<div id="other-scp-options" class="section level3 hasAnchor" number="4.1.3">
-<h3><span class="header-section-number">4.1.3</span> Other <code>scp</code> options<a href="transferring-files.html#other-scp-options" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="other-scp-options" class="section level3 hasAnchor" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Other <code>scp</code> options<a href="transferring-files.html#other-scp-options" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>scp</code> has a few other options that you can apply to tweak the behaviour of the command, which you can access by typing <code>man scp</code> (“manual for <code>scp</code>”). I have highlighted key options below:</p>
 <ul>
 <li><code>-C</code> (upper case <code>C</code>): Enable compression of the file in transit. This requires your machine and the destination machine to both be powerful enough to compress the data faster than it is being sent and this may not always be the case – I personally don’t use this.</li>
@@ -263,8 +267,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="large-transfers-rsync" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Large transfers: <code>rsync</code><a href="transferring-files.html#large-transfers-rsync" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="large-transfers-rsync" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Large transfers: <code>rsync</code><a href="transferring-files.html#large-transfers-rsync" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If you are transferring relatively large folders, <code>rsync</code> (“remote sync”) is preferable to <code>scp</code> because <code>rsync</code> only transfers items that have not changed since the last transfer. This is useful if, for example, you are transferring a very large data set where parts of the data set are updated periodically, but not the whole thing. rsync does this by:</p>
 <ol style="list-style-type: decimal">
 <li>Checking if the destination folder exists,</li>
@@ -273,7 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>If any of the above checks are violated, the file is copied over. Otherwise, the file is not transferred.</p>
 <p>The <code>rsync</code> command is very similar to <code>scp</code> and uses essentially the same format:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="transferring-files.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-ave</span> ssh [-options] source dest</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="transferring-files.html#cb7-1" tabindex="-1"></a><span class="fu">scp</span> <span class="at">-ave</span> ssh <span class="pp">[-</span><span class="ss">options</span><span class="pp">]</span> source dest</span></code></pre></div>
 <p>where the <code>-ave ssh</code> here means:</p>
 <ul>
 <li><code>-a</code>: archive the files (make a copy)</li>
@@ -282,15 +286,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Though similar, <code>rsync</code> differs from <code>scp</code> in that you must provide the path to where you want the folder to exist, followed by a forward slash (<code>/</code>), rather than the folder that it exists in. This may be a little confusing but will be cleared through the example.</p>
 <p><strong>For example</strong>, let’s say I want to transfer the same folder as before to the same destination. I have removed it from the destination for demonstration purposes. The command I would use is:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="transferring-files.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-ave</span> ssh test/ joel-tiamat:/home/edgar/test/</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="transferring-files.html#cb8-1" tabindex="-1"></a><span class="fu">rsync</span> <span class="at">-ave</span> ssh test/ joel-tiamat:/home/edgar/test/</span></code></pre></div>
 <p>The output is as follows:</p>
 <p><img src="images/02-rsync.png" /></p>
 <p>There is something very important to point out here: instead of before, where I specified the folder where I want the folder to be transferred into, i.e. <code>/home/edgar/</code>, I am specifying the exact path that the folder will appear at, i.e. <code>/home/edgar/test/</code>. If you had instead specified the same destination as in <code>scp</code>, you would find that <code>rsync</code> would have dumped the contents of the source folder into the destination folder, rather than creating a new folder inside the destination folder and dumping contents into that.</p>
 <p>Now, let’s say I made a change to a file or added a new file and want to sync the changes. Notice what happens when I run the same command:</p>
 <p><img src="images/02-rsync-partial.png" /></p>
 <p>Only the changed file (<code>a.txt</code>) and a new file (<code>c.txt</code>), were copied! <code>b.txt</code> did not change between transfers and was not re-copied. This can be a huge time-saver and also help to save you money if you are being charged based on your bandwidth.</p>
-<div id="other-rsync-options" class="section level3 hasAnchor" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> Other rsync options<a href="transferring-files.html#other-rsync-options" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="other-rsync-options" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Other rsync options<a href="transferring-files.html#other-rsync-options" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As before, here is a list of useful rsync options:
 * <code>--compress</code>: Compress files being transferred. Similar to scp -C.
 * <code>--copy-links</code>: Also copy links / shortcuts.
@@ -298,8 +302,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 * <code>--remove-source-files</code>: Remove files from the source folder after they are transferred. This essentially turns rsync into a move command instead of a copy command.</p>
 </div>
 </div>
-<div id="interacting-with-the-cloud-rclone" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> Interacting with the cloud: <code>rclone</code><a href="transferring-files.html#interacting-with-the-cloud-rclone" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="interacting-with-the-cloud-rclone" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Interacting with the cloud: <code>rclone</code><a href="transferring-files.html#interacting-with-the-cloud-rclone" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>rclone</code> is yet another tool for remote transfers that can handle interaction with cloud services, e.g. AWS S3, Google Drive, Microsoft Azure Blob Storage, etc. Unlike <code>rsync</code> and <code>scp</code>, <code>rclone</code> is not installed by default and you must grab a copy from <a href="https://rclone.org">rclone.org</a>.</p>
 <p>I will not go into this extensively here as the <code>rclone</code> website has <a href="https://rclone.org/docs/">extensive documentation available</a>, but let me know if you need any help!</p>
 
@@ -310,7 +314,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="server-information.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="troubleshooting.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="special-instructions-for-specific-software.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

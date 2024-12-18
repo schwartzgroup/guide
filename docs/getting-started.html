@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Getting started | Joel’s lab guide</title>
   <meta name="description" content="2 Getting started | Joel’s lab guide" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Getting started | Joel’s lab guide" />
   <meta property="og:type" content="book" />
@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2023-05-22" />
+<meta name="date" content="2024-12-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -65,7 +65,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -143,7 +143,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="getting-started.html"><a href="getting-started.html#best-practices"><i class="fa fa-check"></i><b>2.3</b> Best practices</a></li>
 <li class="chapter" data-level="2.4" data-path="getting-started.html"><a href="getting-started.html#connecting-to-rstudio"><i class="fa fa-check"></i><b>2.4</b> Connecting to RStudio</a></li>
 <li class="chapter" data-level="2.5" data-path="getting-started.html"><a href="getting-started.html#connecting-to-the-command-line-of-a-server"><i class="fa fa-check"></i><b>2.5</b> Connecting to the command line of a server</a></li>
-<li class="chapter" data-level="2.6" data-path="getting-started.html"><a href="getting-started.html#troubleshooting-the-rstudio-server-login"><i class="fa fa-check"></i><b>2.6</b> Troubleshooting the RStudio Server login</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="server-information.html"><a href="server-information.html"><i class="fa fa-check"></i><b>3</b> Server information</a>
 <ul>
@@ -156,48 +155,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3" data-path="server-information.html"><a href="server-information.html#picking-a-server"><i class="fa fa-check"></i><b>3.3</b> How to pick a server to work on</a></li>
 <li class="chapter" data-level="3.4" data-path="server-information.html"><a href="server-information.html#more-precise-monitoring"><i class="fa fa-check"></i><b>3.4</b> More precise monitoring</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="transferring-files.html"><a href="transferring-files.html"><i class="fa fa-check"></i><b>4</b> Transferring files</a>
+<li class="chapter" data-level="4" data-path="troubleshooting.html"><a href="troubleshooting.html"><i class="fa fa-check"></i><b>4</b> Troubleshooting</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="transferring-files.html"><a href="transferring-files.html#simple-transfers-scp"><i class="fa fa-check"></i><b>4.1</b> Simple transfers: <code>scp</code></a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="transferring-files.html"><a href="transferring-files.html#transferring-files-1"><i class="fa fa-check"></i><b>4.1.1</b> Transferring files</a></li>
-<li class="chapter" data-level="4.1.2" data-path="transferring-files.html"><a href="transferring-files.html#transferring-folders"><i class="fa fa-check"></i><b>4.1.2</b> Transferring folders</a></li>
-<li class="chapter" data-level="4.1.3" data-path="transferring-files.html"><a href="transferring-files.html#other-scp-options"><i class="fa fa-check"></i><b>4.1.3</b> Other <code>scp</code> options</a></li>
+<li class="chapter" data-level="4.1" data-path="troubleshooting.html"><a href="troubleshooting.html#troubleshooting-file-permissions-errors"><i class="fa fa-check"></i><b>4.1</b> Troubleshooting file permissions errors</a></li>
+<li class="chapter" data-level="4.2" data-path="troubleshooting.html"><a href="troubleshooting.html#troubleshooting-the-rstudio-server-login"><i class="fa fa-check"></i><b>4.2</b> Troubleshooting the RStudio Server login</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="transferring-files.html"><a href="transferring-files.html#large-transfers-rsync"><i class="fa fa-check"></i><b>4.2</b> Large transfers: <code>rsync</code></a>
+<li class="chapter" data-level="5" data-path="transferring-files.html"><a href="transferring-files.html"><i class="fa fa-check"></i><b>5</b> Transferring files</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="transferring-files.html"><a href="transferring-files.html#other-rsync-options"><i class="fa fa-check"></i><b>4.2.1</b> Other rsync options</a></li>
+<li class="chapter" data-level="5.1" data-path="transferring-files.html"><a href="transferring-files.html#simple-transfers-scp"><i class="fa fa-check"></i><b>5.1</b> Simple transfers: <code>scp</code></a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="transferring-files.html"><a href="transferring-files.html#transferring-files-1"><i class="fa fa-check"></i><b>5.1.1</b> Transferring files</a></li>
+<li class="chapter" data-level="5.1.2" data-path="transferring-files.html"><a href="transferring-files.html#transferring-folders"><i class="fa fa-check"></i><b>5.1.2</b> Transferring folders</a></li>
+<li class="chapter" data-level="5.1.3" data-path="transferring-files.html"><a href="transferring-files.html#other-scp-options"><i class="fa fa-check"></i><b>5.1.3</b> Other <code>scp</code> options</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="transferring-files.html"><a href="transferring-files.html#interacting-with-the-cloud-rclone"><i class="fa fa-check"></i><b>4.3</b> Interacting with the cloud: <code>rclone</code></a></li>
+<li class="chapter" data-level="5.2" data-path="transferring-files.html"><a href="transferring-files.html#large-transfers-rsync"><i class="fa fa-check"></i><b>5.2</b> Large transfers: <code>rsync</code></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="transferring-files.html"><a href="transferring-files.html#other-rsync-options"><i class="fa fa-check"></i><b>5.2.1</b> Other rsync options</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html"><i class="fa fa-check"></i><b>5</b> Special instructions for specific software</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#gurobi"><i class="fa fa-check"></i><b>5.1</b> Gurobi</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#use"><i class="fa fa-check"></i><b>5.1.1</b> Use</a></li>
-<li class="chapter" data-level="5.1.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installation"><i class="fa fa-check"></i><b>5.1.2</b> Installation</a>
-<ul>
-<li class="chapter" data-level="5.1.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#download-gurobi-and-upload-to-the-server"><i class="fa fa-check"></i><b>5.1.2.1</b> Download Gurobi and upload to the server</a></li>
-<li class="chapter" data-level="5.1.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#decompress-to-opt"><i class="fa fa-check"></i><b>5.1.2.2</b> Decompress to <code>/opt/</code></a></li>
-<li class="chapter" data-level="5.1.2.3" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#enable-for-command-line-users"><i class="fa fa-check"></i><b>5.1.2.3</b> Enable for command-line users</a></li>
-<li class="chapter" data-level="5.1.2.4" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#enable-for-rstudio-server-users"><i class="fa fa-check"></i><b>5.1.2.4</b> Enable for RStudio Server users</a></li>
-<li class="chapter" data-level="5.1.2.5" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install-the-r-package"><i class="fa fa-check"></i><b>5.1.2.5</b> Install the R package</a></li>
+<li class="chapter" data-level="5.3" data-path="transferring-files.html"><a href="transferring-files.html#interacting-with-the-cloud-rclone"><i class="fa fa-check"></i><b>5.3</b> Interacting with the cloud: <code>rclone</code></a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#fbkmr"><i class="fa fa-check"></i><b>5.2</b> fbkmr</a>
+<li class="chapter" data-level="6" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html"><i class="fa fa-check"></i><b>6</b> Special instructions for specific software</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-dependencies"><i class="fa fa-check"></i><b>5.2.1</b> Installing dependencies</a></li>
-<li class="chapter" data-level="5.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-fbkmr"><i class="fa fa-check"></i><b>5.2.2</b> Installing <code>fbkmr</code></a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#rqpd"><i class="fa fa-check"></i><b>5.3</b> RQPD</a>
+<li class="chapter" data-level="6.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#gurobi"><i class="fa fa-check"></i><b>6.1</b> Gurobi</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#clone-the-rqpd-subversion-repository"><i class="fa fa-check"></i><b>5.3.1</b> Clone the RQPD Subversion repository</a></li>
-<li class="chapter" data-level="5.3.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install"><i class="fa fa-check"></i><b>5.3.2</b> Install</a></li>
+<li class="chapter" data-level="6.1.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#use"><i class="fa fa-check"></i><b>6.1.1</b> Use</a></li>
+<li class="chapter" data-level="6.1.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installation"><i class="fa fa-check"></i><b>6.1.2</b> Installation</a>
+<ul>
+<li class="chapter" data-level="6.1.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#download-gurobi-and-upload-to-the-server"><i class="fa fa-check"></i><b>6.1.2.1</b> Download Gurobi and upload to the server</a></li>
+<li class="chapter" data-level="6.1.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#decompress-to-opt"><i class="fa fa-check"></i><b>6.1.2.2</b> Decompress to <code>/opt/</code></a></li>
+<li class="chapter" data-level="6.1.2.3" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#enable-for-command-line-users"><i class="fa fa-check"></i><b>6.1.2.3</b> Enable for command-line users</a></li>
+<li class="chapter" data-level="6.1.2.4" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#enable-for-rstudio-server-users"><i class="fa fa-check"></i><b>6.1.2.4</b> Enable for RStudio Server users</a></li>
+<li class="chapter" data-level="6.1.2.5" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install-the-r-package"><i class="fa fa-check"></i><b>6.1.2.5</b> Install the R package</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="datasets-exposures.html"><a href="datasets-exposures.html"><i class="fa fa-check"></i><b>6</b> Datasets: Exposures</a></li>
-<li class="chapter" data-level="7" data-path="datasets-outcomes.html"><a href="datasets-outcomes.html"><i class="fa fa-check"></i><b>7</b> Datasets: Outcomes</a></li>
-<li class="chapter" data-level="8" data-path="datasets-covariates.html"><a href="datasets-covariates.html"><i class="fa fa-check"></i><b>8</b> Datasets: Covariates</a></li>
+<li class="chapter" data-level="6.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#fbkmr"><i class="fa fa-check"></i><b>6.2</b> fbkmr</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-dependencies"><i class="fa fa-check"></i><b>6.2.1</b> Installing dependencies</a></li>
+<li class="chapter" data-level="6.2.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#installing-fbkmr"><i class="fa fa-check"></i><b>6.2.2</b> Installing <code>fbkmr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#rqpd"><i class="fa fa-check"></i><b>6.3</b> RQPD</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#clone-the-rqpd-subversion-repository"><i class="fa fa-check"></i><b>6.3.1</b> Clone the RQPD Subversion repository</a></li>
+<li class="chapter" data-level="6.3.2" data-path="special-instructions-for-specific-software.html"><a href="special-instructions-for-specific-software.html#install"><i class="fa fa-check"></i><b>6.3.2</b> Install</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="datasets-exposures.html"><a href="datasets-exposures.html"><i class="fa fa-check"></i><b>7</b> Datasets: Exposures</a></li>
+<li class="chapter" data-level="8" data-path="datasets-outcomes.html"><a href="datasets-outcomes.html"><i class="fa fa-check"></i><b>8</b> Datasets: Outcomes</a></li>
+<li class="chapter" data-level="9" data-path="datasets-covariates.html"><a href="datasets-covariates.html"><i class="fa fa-check"></i><b>9</b> Datasets: Covariates</a></li>
 </ul>
 
       </nav>
@@ -221,7 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="connecting-to-the-vpn" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Connecting to the VPN<a href="getting-started.html#connecting-to-the-vpn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If you’re not currently in the 401 Park / Landmark building, you’ll have to first connect to the Harvard VPN using your HarvardKey credentials to access the lab servers. If you don’t have the VPN client already, you can download it at <a href="https://vpn.harvard.edu" class="uri">https://vpn.harvard.edu</a>. AnyConnect functionality comes pre-installed in Linux systems (OpenConnect -&gt; Cisco AnyConnect in the NetworkManager VPN manager).</p>
-<p>The VPN address is <code>vpn.harvard.edu</code> and the tunnel is <code>#HSPH</code> (add this to the end of your HarvardKey login, e.g. <code>your_harvardkey_name@g.harvard.edu#HSPH</code>). You wil be prompted to enter two passwords: first password will be your HarvardKey password and the second password will be <code>push</code>, which will activate a Duo push on your phone.</p>
+<p>The VPN address is <code>vpn.harvard.edu/hsph</code> and your username is your Harvard email. You will be prompted to enter two passwords: first password will be your HarvardKey password and the second password will be <code>push</code>, which will activate a Duo push on your phone.</p>
 <p>Some notes on the VPN:</p>
 <ul>
 <li>If you only have a FASRC VPN account, you’ll need to get a separate, generic Harvard VPN account. FASRC VPN accounts seem to be unable to access the lab servers.</li>
@@ -235,7 +239,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Work servers, which have high CPU and memory capacity, and</li>
 <li>Storage servers, which have high disk capacity but low CPU and memory capacity.</li>
 </ol>
-<p>Each of the storage servers is accessible from the <code>/media/</code> directory of each work server. For example, the <code>qnap4</code> storage server is available by accessing <code>/media/qnap4/</code> on any of the work servers, <code>gate</code> is available at <code>/media/gate</code>, etc.</p>
+<p>Each of the storage servers is accessible from the <code>/media/</code> directory of each work server. For example, the <code>qnap5</code> storage server is available by accessing <code>/media/qnap5/</code> on any of the work servers, <code>Isilon</code> is available at <code>/media/Isilon</code>, etc.</p>
 <p>The structure of <code>/media/</code> is set up such that it is identical on each of the work servers, so code that references e.g. <code>/media/qnap4/some-file.txt</code> will be able to run without modification on any of the work servers.</p>
 <p>For detailed information about what servers are available and what resources each possesses, see <a href="server-information.html#server-info">the section on server attributes</a>.</p>
 </div>
@@ -249,11 +253,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.4</span> Connecting to RStudio<a href="getting-started.html#connecting-to-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>RStudio is available on port <code>8787</code> of any of the work. You can access RStudio directly by clicking on one of the links below (helpful to bookmark!):</p>
 <ul>
-<li>tiamat: <a href="http://10.174.192.10:8787/" class="uri">http://10.174.192.10:8787/</a></li>
-<li>mithra: <a href="http://10.174.192.11:8787/" class="uri">http://10.174.192.11:8787/</a></li>
-<li>dagda: <a href="http://10.174.192.12:8787/" class="uri">http://10.174.192.12:8787/</a></li>
-<li>shiva: <a href="http://10.174.192.14:8787/" class="uri">http://10.174.192.14:8787/</a></li>
+<li>tiamat: <a href="http://sph-tiamat.sph.harvard.edu:8787/" class="uri">http://sph-tiamat.sph.harvard.edu:8787/</a> or <a href="http://10.174.192.10:8787/" class="uri">http://10.174.192.10:8787/</a></li>
+<li>mithra: <a href="http://sph-mithra.sph.harvard.edu:8787/" class="uri">http://sph-mithra.sph.harvard.edu:8787/</a> or <a href="http://10.174.192.11:8787/" class="uri">http://10.174.192.11:8787/</a></li>
+<li>dagda: <a href="http://sph-dagda.sph.harvard.edu:8787/" class="uri">http://sph-dagda.sph.harvard.edu:8787/</a> or <a href="http://10.174.192.12:8787/" class="uri">http://10.174.192.12:8787/</a></li>
+<li>shiva: <a href="http://sph-shiva.sph.harvard.edu:8787/" class="uri">http://sph-shiva.sph.harvard.edu:8787/</a> or <a href="http://10.174.192.14:8787/" class="uri">http://10.174.192.14:8787/</a></li>
+<li>GCMC: <a href="http://sph-gcmc-js.sph.harvard.edu:8787/" class="uri">http://sph-gcmc-js.sph.harvard.edu:8787/</a> or <a href="http://10.174.192.15:8787/" class="uri">http://10.174.192.15:8787/</a></li>
 </ul>
+<p>Accounts on GCMC must be requested from William Kessler.</p>
 </div>
 <div id="connecting-to-the-command-line-of-a-server" class="section level2 hasAnchor" number="2.5">
 <h2><span class="header-section-number">2.5</span> Connecting to the command line of a server<a href="getting-started.html#connecting-to-the-command-line-of-a-server" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -263,16 +269,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="https://www.putty.org/">Install PuTTY</a>, <a href="https://mobaxterm.mobatek.net/">MobaXTerm</a>, or some other terminal client and then enter the server IP address into the main dialog, or</li>
 <li><a href="https://learn.microsoft.com/en-us/windows/wsl/install">Install Linux</a> and then type <code>ssh your_username@server_ip</code> from the Linux terminal</li>
-</ul>
-</div>
-<div id="troubleshooting-the-rstudio-server-login" class="section level2 hasAnchor" number="2.6">
-<h2><span class="header-section-number">2.6</span> Troubleshooting the RStudio Server login<a href="getting-started.html#troubleshooting-the-rstudio-server-login" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Several issues can arise when using the RStudio Server related to saturating the CPU, memory, or I/O. If you’re having issues logging in (but the RStudio login page shows up), you can try to log in to the command line and try the following (listed in order of likeliness), or you can post to the lab Google Group:</p>
-<ul>
-<li>Running jobs: Use <code>htop</code> and press F4 to filter by <code>rsession -u [your username]</code> to see if you have a job open. If you see any jobs using up 100% CPU then likely they’re holding up the login process and the server is waiting for whatever you were running the last time you logged on to finish. If this is the case, you can either wait or press F9 to open the kill job menu and send signal 9 (SIGKILL) to terminate immediately.</li>
-<li>Full memory: Use <code>htop</code> to see if the Mem bar is full. If it is, then your session is likely swapping which means it’s processing data on-disk instead of in-memory. This is extremely slow. If all servers look like this and the CPUs look idle despite the memory usage, feel free to email me and I can reach out to the people logged in to the RStudio Server and see if they’re still running anything. Sometimes people forget about their jobs (no problem with that, of course!) and I can kill them to free up some memory.</li>
-<li>Large session cache: Use <code>du -sh ~/.local/share/rstudio/sessions/</code> to see the size of your saved sessions. Every time you log in, RStudio Server restores your last session using these files. If it’s bigger than say 10GB and you don’t want to wait you can use <code>rm -rf ~/.local/share/rstudio/sessions/</code> to remove them.</li>
-<li>Unmounted drives: Use <code>mount -a</code> and look for qnap, qnap2, qnap3, qnap4, gate (whichever you are using) and make sure the drive is there. If it’s not, then one of the network drives disconnected. Your process likely got zombified and the server needs to be restarted.</li>
 </ul>
 
 </div>
